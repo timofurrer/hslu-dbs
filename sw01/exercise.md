@@ -28,3 +28,20 @@ Eine SQL Datenbank skaliert vertikal wohingegen eine NoSQL Datenbank horizontal 
 ## Was ist der Unterschied zwischen Datenbanken und Datenmanagement?
 
 Eine Datenbank ist *nur* ein Ansatz Daten zu verwalten - Also Datenmanagement zu betreiben.
+
+# Gruppenarbeit
+
+## Welchen Bezughaben Sie persönlich zum Thema Datenbanken?
+
+Eine 1:n Beziehung.
+
+## Welche Beispiele von Datenbanken kennen Sie aus der Praxis?
+
+* Mitgliederdatenk in einem Verein
+* Patiendatenbanken in einem Spital oder Labor
+*
+
+## Was ist eine mögliche Definition des Begriffs Datenbanken? Formulieren Sie Ihre eigene Definition?
+
+## Warum ist eine XML-Datei keine Datenbank?
+
