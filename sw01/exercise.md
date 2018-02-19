@@ -2,8 +2,6 @@
 
 [ILIAS Dokument](https://elearning.hslu.ch/ilias/goto.php?target=file_3608481_download)
 
-A Furrer, Staub, Waldispuehl Solution :tada:
-
 ## Selbststudium
 
 ### Was ist der Unterschied zwischen einer Datenbank und einem Informationssystem?
@@ -73,3 +71,7 @@ Eine 1:n Beziehung.
 ## Presentation
 
 [Google Slides](https://docs.google.com/presentation/d/1o6ePtryBP9KrIOSaS7OvEKrGfTDe5POIaRXMCS2tKkM/edit?usp=sharing)
+
+***
+
+*<p align="center">A Furrer, Staub, Waldispuehl Solution :tada:</p>*
