@@ -43,5 +43,7 @@ Eine 1:n Beziehung.
 
 ## Was ist eine mögliche Definition des Begriffs Datenbanken? Formulieren Sie Ihre eigene Definition?
 
+* Eine organisierte Sammlung von Daten, die auf einem Computersystem verwaltet werden und verwendet, bearbeitet und erweitert werden können.
+
 ## Warum ist eine XML-Datei keine Datenbank?
 
