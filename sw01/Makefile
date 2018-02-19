@@ -1,0 +1,2 @@
+all:
+	mdpdf exercise.md
