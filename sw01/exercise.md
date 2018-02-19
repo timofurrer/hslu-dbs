@@ -35,7 +35,7 @@ Eine Datenbank ist *nur* ein Ansatz Daten zu verwalten - Also Datenmanagement zu
 
 ## Gruppenarbeit
 
-### Welchen Bezughaben Sie persönlich zum Thema Datenbanken?
+### Welchen Bezug haben Sie persönlich zum Thema Datenbanken?
 
 Eine 1:n Beziehung.
 
@@ -55,7 +55,7 @@ Eine 1:n Beziehung.
 (mehr oder weniger nach Karl August Zehnder)
 * Eine XML Datei ist lediglich die Datenbasis und verfuegt ueber kein DBMS.
 
-### Welche Vor-und Nachteile hat der Einsatz von Datenbanken? Bzw. welche Vor-und Nachteile hat die Verarbeitung mit Dateien? Vergleichen Sie
+### Welche Vor- und Nachteile hat der Einsatz von Datenbanken? Bzw. welche Vor- und Nachteile hat die Verarbeitung mit Dateien? Vergleichen Sie.
 
 | | Datenbank | Datei |
 |-------:|-----:|----:|
