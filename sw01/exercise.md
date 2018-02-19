@@ -47,7 +47,14 @@ Eine 1:n Beziehung.
 
 ## Warum ist eine XML-Datei keine Datenbank?
 
-* Eine xml Datei ist keine Datenorganisation die auf dauer flexiblen, sicheren und selbstständigen Gebrauch gewährleistet.
+* Eine xml Datei ist keine Datenorganisation die auf Dauer flexiblen, sicheren und selbstständigen Gebrauch gewährleistet.
 (nach Karl August Zehnder)
 
 ## Welche Vor-und Nachteile hat der Einsatz von Datenbanken? Bzw. welche Vor-und Nachteile hat die Verarbeitung mit Dateien? Vergleichen Sie
+
+DB
++ Mehrbenutzerbetrieb: Transaktionsmanagement
++ Konsistänz und integrität der Daten
++ Sicherheit der Saten
++ Einfache Wartung durch Kapselung der Daten
+- Schwerfälliger als eine einfaches Dateisystem
