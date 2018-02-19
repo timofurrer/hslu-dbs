@@ -61,7 +61,7 @@ Eine 1:n Beziehung.
 |-------:|-----:|----:|
 | Einfaches Abfragen von Daten | + | - |
 | Mehrbenutzerbetrieb: Transaktionsmanagement | + | - |
-| Konsistänz und integrität der Daten | + | - |
+| Konsistänz und Integrität der Daten | + | - |
 | Sicherheit der Daten / Zugriffsmanagement | + | - |
 | Einfache Wartung durch Kapselung der Daten | + | - |
 | Lightweight | - | + |
