@@ -56,12 +56,13 @@ Eine 1:n Beziehung.
 
 ### Welche Vor-und Nachteile hat der Einsatz von Datenbanken? Bzw. welche Vor-und Nachteile hat die Verarbeitung mit Dateien? Vergleichen Sie
 
-DB
-+ Mehrbenutzerbetrieb: Transaktionsmanagement
-+ Konsistänz und integrität der Daten
-+ Sicherheit der Saten
-+ Einfache Wartung durch Kapselung der Daten
-- Schwerfälliger als eine einfaches Dateisystem
+| | Datenbank | Datei |
+|-------:|-----:|----:|
+| Mehrbenutzerbetrieb: Transaktionsmanagement | + | - |
+| Konsistänz und integrität der Daten | + | - |
+| Sicherheit der Saten | + | - |
+| Einfache Wartung durch Kapselung der Daten | + | - |
+| Lightweight | - | + |
 
 ## Presentation
 
