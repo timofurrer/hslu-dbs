@@ -39,7 +39,7 @@ Eine 1:n Beziehung.
 
 * Mitgliederdatenk in einem Verein
 * Patiendatenbanken in einem Spital oder Labor
-*
+* Bestandsdatenbanken fuer ein Lager
 
 ## Was ist eine mögliche Definition des Begriffs Datenbanken? Formulieren Sie Ihre eigene Definition?
 
@@ -47,3 +47,4 @@ Eine 1:n Beziehung.
 
 ## Warum ist eine XML-Datei keine Datenbank?
 
+## Welche Vor-und Nachteile hat der Einsatz von Datenbanken? Bzw. welche Vor-und Nachteile hat die Verarbeitung mit Dateien? Vergleichen Sie
