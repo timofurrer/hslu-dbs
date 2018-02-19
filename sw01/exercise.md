@@ -2,6 +2,8 @@
 
 [ILIAS Dokument](https://elearning.hslu.ch/ilias/goto.php?target=file_3608481_download)
 
+A Furrer, Staub, Waldispuehl Solution :tada:
+
 ## Selbststudium
 
 ### Was ist der Unterschied zwischen einer Datenbank und einem Informationssystem?
