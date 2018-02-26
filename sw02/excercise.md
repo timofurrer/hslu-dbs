@@ -23,7 +23,11 @@
 
 ### Wann ist eine Spezialisierung vollständig?
 
+Vollstaendig bedeutet, dass jede Entitaet der Generalisierung sich mindestens einer Spezialisierung zuordnen laesst.
+
 ### Wann ist sie disjunkt?
+
+Sie schliessen sich gegenseitig aus.
 
 
 ## Bonusaufgabe: Theorie des Entitäten - Beziehungsmodells
