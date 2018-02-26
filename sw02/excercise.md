@@ -6,6 +6,11 @@
 
 ### Welche Assoziationstypen gibt es?
 
+* Typ 1: Genau Eine
+* Typ c: Null oder Eine
+* Typ m: Eine oder mehrere
+* Typ mc: Null, Eine oder Mehrere
+
 ### Was ist der Unterschied zwischen Generalisierung und Aggregation?
 
 ### Was ist der Unterschied zwischen Generalisierung und Spezialisierung?
