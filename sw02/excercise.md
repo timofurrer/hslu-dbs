@@ -5,3 +5,8 @@
 ## Selbststudium
 
 ### Welche Assoziationstypen gibt es?
+
+* Typ 1: Genau E
+* Typ c: Null oder Eine
+* Typ m: Eine oder mehrere
+* Typ mc: Null, Eine oder Mehrere
