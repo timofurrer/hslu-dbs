@@ -13,6 +13,9 @@
 
 ### Was ist der Unterschied zwischen Generalisierung und Aggregation?
 
+* Generalisierung: *is-a* Beziehung
+* Aggregation: *part-of* Beziehung
+
 ### Was ist der Unterschied zwischen Generalisierung und Spezialisierung?
 
 ### Wann ist eine Spezialisierung vollständig?
