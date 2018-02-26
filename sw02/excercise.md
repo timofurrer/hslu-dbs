@@ -44,5 +44,9 @@ Sie schliessen sich gegenseitig aus.
 Die Firma AutoNomiX ist eine Informatikfirma mit 57 Mitarbeitern, welche an einem Arbeitsplatz in einem bestimmten Büro sitzen. Es gibt zwei Mitarbeiterkategorien: Aktionäre (Partner), und „normale“ Mitarbeiter. Aktionäre haben eine gewisse Anzahl Aktien. Die Mitarbeiter sind in verschiedenen Rollen (Projektleiter, Analyst, Programmierer) in verschiedenen Projekten beteiligt. Es gibt allerdings jeweils nur einen Projektleiter pro Projekt. Ein Projekt wird wiederum für eine Firma als Kunde durchgeführt. Kunden haben Adressen und Ansprechpartner mit Kontaktinformationen. Firmen, Mitarbeiter und Ansprechpartner sind (juristische) Personen. Weiter werden in den Projekten Dokumente erarbeitet, welche von verschiedenen Mitarbeitern als Autoren erstellt werden.
 
 ### Modellieren Sie ein konzeptionelles Entity - Relationship Diagramm zur Fallstudie AutoNomiX, basierend auf Entitätsmengen, Beziehungsmengen, Assozationen, Assoziationstypen und Merkmalen, inkl. Kennzeichnung der Schlüsselmerkmalen. Fügen Sie alle Informationen ein, welche Sie in der Beschreibung der Fallstudie erkennen können.
+
+TODO: Add draw.io image
+
 ### Wo sehen Sie in diesem Beispiel eine Generalisierung, also eine „ist - ein“ Beziehung? Ist die zugehörige Spezialisierung vollständig?
+
 ### Wo sehen Sie in diesem Beispiel eine Aggregation, also eine „teil-von“ Beziehung?
