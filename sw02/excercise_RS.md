@@ -43,13 +43,36 @@ Wenn C von B und B von A abhaengt. Aber nicht in die andere Richtung.
 
 ### Welchen Bezug haben diese Abhängigkeiten zu den Normalformen 1 – 3?
 
+#### Normalform 1
+
+Es wird ueberprueft, ob alle Merkmale funktional abhaengig zueinander sind.
+
+#### Normalform 2
+
+Es wird ueberprueft, ob alle Merkmale voll funktional abhaengig zueinander sind.
+
+#### Normalform 3
+
+Die Tabelle wird zusaetzlich zu *1* und *2* noch auf transitive Abhaengigkeiten geprueft.
+
 ### Was ist der unterschied zwischen einer Tabelle und einer Relation?
+
+Eine Relation beschreibt tabellarisch die Beziehungen zwischen zwei Tabellen.
 
 ### Welches sind die zwei wichtigen Schlüsseleigenschaften?
 
+* Eindeutigkeit
+* Minimalitaet
+
 ### Warum braucht es für einfach-komplexe und einfach-einfache Beziehungsmengen keine Bezeiehungstabelle?
 
+Die Ausgangstabelle speichert den PK der ausgelagerten Tabelle direkt als FK in einer Spalte.
+
 ### Wozu braucht es die siebte Regel? 
+
+**Regel 7**: Aggregation
+
+Die Entitaetsmenge und die Beziehungsmenge muessen als eigenstaendige Tabelle definitiert sein.
 
 ## Bonusaufgabe
 Schauen Sie den ACM - Artikel von E.F. Codd auf ILIAS an: p377-codd.pdf (auf ILIAS).
