@@ -67,3 +67,10 @@ Analysieren Sie folgende Tabelle hinsichtlich der Abhängigkeiten.
 |7, Marty, Basel|Mietrecht, 23.- / Stiller, 11.- / Alaskafieber, 17.-|16.11.2014 / 17.11.2014 / 17.11.2014|Recht / Roman / Reisen|3, Bieri, Lehrtochter / 2, Schaller, Verkäufer / 1, Spahni, Filialleiter|
 
 ### Wie würde diese Tabelle in der dritten Normalform aussehen?
+
+## Umsetzung eines ER-Diagramms in ein relationales Schema
+
+### Wie würde diese Tabelle in der dritten Normalform aussehen?
+In der vorherigen Session haben Sie eine Übung gemacht, bei der Sie ein ER-Modell für eine Firma erstellt haben. Setzen sie Ihr ER-Modell der Übung AutoNomiX (oder das ER-Modell der Musterlösung) in ein relationales Schema um. Laden und installieren Sie dazu die MySQL Workbench.
+
+### Können sie nachvollziehen, wie die Entitäten und Beziehungen im Code abgebildet wurden?
