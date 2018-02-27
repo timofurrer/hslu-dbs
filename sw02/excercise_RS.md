@@ -37,3 +37,19 @@ Schauen Sie den ACM - Artikel von E.F. Codd auf ILIAS an: p377-codd.pdf (auf ILI
 ### Welche Arten von Datenabhängigkeiten in damaligen Systemen nennt Codd?
 
 ### Welches sind die 5 Eigenschaften von Relationen, die Codd aufzählt?
+## Normalformen
+Analysieren Sie folgende Tabelle hinsichtlich der Abhängigkeiten.
+
+|Spiel|Entwickler|User|Geschlecht|Alter|Kategorie|Erstregistrierung|Bezeichnung|
+|----:|---------:|---:|---------:|----:|--------:|----------------:|----------:|
+|World of Warcraft|Blizzard|Chack|M|55|50+|19.03.00|Rollenspiel|
+|Rift|Trion|Angela|F|55|50+|22.05.01|Rollenspiel|
+|Guildwars|NcSoft|Burack|M|49|30|-|49|17.04.01|Rollenspiel|
+|Star Wars Online|Electronic Arts|Chack|M|55|50+|08.08.05|SciFi|
+|Rift|Trion|Burack|M|49|30|-|49|17.05.02|Rollenspiel|
+|World of|Warcraft|Blizzard|Angela|F|55|50+|28.08.08|Rollenspiel|
+|Star Wars Online|Electronic|Arts|Burack|M|49|30|-|49|17.11.11|SciFi|
+
+### In welcher Normalform ist diese Tabelle? Begründen Sie ihre Antwort ganz genau aufgrund ihrer Analyse.
+
+### Wie würde diese Tabelle in der dritten Normalform aussehen? 
