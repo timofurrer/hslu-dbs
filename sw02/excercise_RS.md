@@ -27,3 +27,13 @@ Lesen Sie im Buch von Meier & Kaufmann (2016) die Kapitel 1.2.1, 2.3.1 und 2.3.2
 
 ### Wozu braucht es die siebte Regel? 
 
+## Bonusaufgabe
+Schauen Sie den ACM - Artikel von E.F. Codd auf ILIAS an: p377-codd.pdf (auf ILIAS).
+
+### was sind aus Sicht E.F. Codd die Vorteile des relationalen Datenbankmodells gegenüber den damals verbreiteten Modellen wie z.B. dem graph- oder network model?
+
+### Was heisst data independence und was ist diesbezüglich der Vorteil des relationalen Modells?
+
+### Welche Arten von Datenabhängigkeiten in damaligen Systemen nennt Codd?
+
+### Welches sind die 5 Eigenschaften von Relationen, die Codd aufzählt?
