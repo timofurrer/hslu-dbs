@@ -100,9 +100,18 @@ Analysieren Sie folgende Tabelle hinsichtlich der Abhängigkeiten.
 
 ### In welcher Normalform ist diese Tabelle? Begründen Sie ihre Antwort ganz genau aufgrund ihrer Analyse.
 
+Die Tabelle ist in der ersten Normalform.
+Es gibt nur eine einzige Tabelle und es sind keine Schluessel vorhanden.
+
 ### Wie würde diese Tabelle in der dritten Normalform aussehen? 
 
+Mehrere Tabellen:
+* Spiel
+* User
+* Bezeichnung
+
 ### In welcher Normalform ist die folgende Tabelle?
+
 |Kunde: KNr, Name, Ort|Buch (inkl. Preis)|Verkaufsdatum|Sachgebiet|Verkaufspersonal: PNr, Name, Stellung|
 |--------------------:|-----------------:|------------:|---------:|------------------------------------:|
 |1, Blatter, Fribourg|The Stand, 30.- / Tiptopf, 25.-|04.11.2014 / 09.11.2014|Roman / Kochen|1, Spahni, Filialleiter / 1. Spahni, Filialleiter|
@@ -113,7 +122,18 @@ Analysieren Sie folgende Tabelle hinsichtlich der Abhängigkeiten.
 |6, Zurfluh, Basel|Stiller, 17.- / Sturmhöhe, 25.-|14.11.2014 / 14.11.2014|Roman / Roman|2, Schaller, Verkäufer / 2, Schaller, Verkäufer|
 |7, Marty, Basel|Mietrecht, 23.- / Stiller, 11.- / Alaskafieber, 17.-|16.11.2014 / 17.11.2014 / 17.11.2014|Recht / Roman / Reisen|3, Bieri, Lehrtochter / 2, Schaller, Verkäufer / 1, Spahni, Filialleiter|
 
+Die Tabelle ist unnormalisiert.
+
 ### Wie würde diese Tabelle in der dritten Normalform aussehen?
+
+Mehrere Tabellen:
+* Kunde
+* Adresse
+* Buch
+* Verkaufspersonal
+* Sachgebiet
+* Verkauf
+* Stellung
 
 ## Umsetzung eines ER-Diagramms in ein relationales Schema
 
