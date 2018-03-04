@@ -35,7 +35,8 @@ Die Firma AutoNomiX ist eine Informatikfirma mit 57 Mitarbeitern, welche an eine
 
 ### Modellieren Sie ein konzeptionelles Entity - Relationship Diagramm zur Fallstudie AutoNomiX, basierend auf Entitätsmengen, Beziehungsmengen, Assozationen, Assoziationstypen und Merkmalen, inkl. Kennzeichnung der Schlüsselmerkmalen. Fügen Sie alle Informationen ein, welche Sie in der Beschreibung der Fallstudie erkennen können.
 
-Siehe zweites PDF
+![alt text](https://i.imgur.com/BPyVZBU.jpg)
+
 
 ### Wo sehen Sie in diesem Beispiel eine Generalisierung, also eine „ist - ein“ Beziehung? Ist die zugehörige Spezialisierung vollständig?
 Mitarbeiter : Projektleiter, Analyst, Programmierer
