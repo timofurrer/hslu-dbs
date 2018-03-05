@@ -74,17 +74,6 @@ Die Ausgangstabelle speichert den PK der ausgelagerten Tabelle direkt als FK in 
 
 Die Entitaetsmenge und die Beziehungsmenge muessen als eigenstaendige Tabelle definitiert sein.
 
-## Bonusaufgabe
-Schauen Sie den ACM - Artikel von E.F. Codd auf ILIAS an: p377-codd.pdf (auf ILIAS).
-
-### was sind aus Sicht E.F. Codd die Vorteile des relationalen Datenbankmodells gegenüber den damals verbreiteten Modellen wie z.B. dem graph- oder network model?
-
-### Was heisst data independence und was ist diesbezüglich der Vorteil des relationalen Modells?
-
-### Welche Arten von Datenabhängigkeiten in damaligen Systemen nennt Codd?
-
-### Welches sind die 5 Eigenschaften von Relationen, die Codd aufzählt?
-
 ## Normalformen
 Analysieren Sie folgende Tabelle hinsichtlich der Abhängigkeiten.
 
