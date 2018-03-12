@@ -36,19 +36,27 @@ Die Beispiele beziehen sich auf die Uni-Datenbank. Sie können den SQL-Code auch
 
 ### Kreuzprodukt - Welche mögliche Kombinationen von Vorlesungen und Professoren gibt es?
 
-### Verbund - 
+### Verbund
 
-Welche Vorlesungen können als Nachfolger der Vorlesungen mit 4 SWS besucht werden?
-Listen Sie in der ersten Spalte die Titel der Vorlesungen mit 4 SWS auf, und in der zweiten Spalte
-die Titel ihrer möglichen Nachfolger.
-Zeichnen sie zudem den zugehörigen Abfragebaum.
-Zeichnen sie zudem den zugehörigen Abfragebaum.
+#### Welche Vorlesungen können als Nachfolger der Vorlesungen mit 4 SWS besucht werden?
+#### Listen Sie in der ersten Spalte die Titel der Vorlesungen mit 4 SWS auf, und in der zweiten Spalte die Titel ihrer möglichen Nachfolger.
+#### Zeichnen sie zudem den zugehörigen Abfragebaum.
+#### Zeichnen sie zudem den zugehörigen Abfragebaum.
 
 ## Daten manipulieren
 
+### Erstellen Sie eine Tabelle Hilfsassistenten, welche die gleichen Attribute wie die Tabelle Assistenten aufweist.
 
+### Fügen Sie die Hilfsassistenten Chomsky (Fachgebiet Sprachphilosophie, arbeitet für Kant) und Newton (Naturphilosophie, Curie) ein.
 
+### Ändern Sie das Fachgebiet von Newton zu idealistische Metaphysik.
+
+### Löschen Sie Chomsky
 
 ## Daten aggregieren
 
+### Wieviele Professoren mit Rang C3 gibt es?
 
+### Was ist die minimale, maximale und durchschnittliche Anzahl Semester?
+
+### Wieviele Semesterwochenstunden (SWS, ~= ECTS) unterrichten die Professoren mit Rang C4?
