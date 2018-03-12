@@ -34,13 +34,32 @@ Relationale Operatoren:
 
 ### Wie wird die Selektion in SQL umgesetzt?
 
+```
+SELECT  *
+FROM    MITARBEITER
+WHERE   Ort='Liestal' AND Unt='A6'
+```
+
 ### Wie wird die Projektion in SQL umgesetzt?
 
+```
+SELECT  Unt, Name
+FROM    MITARBEITER
+```
+
 ### Wie wird der Join in SQL umgesetzt?
+
+```
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+```
 
 ### Wie zeigt sich die Eigenschaft von SQL, dass sie deskriptiv ist?
 
 ### Was bedeutet die Aussage, dass SQL relational vollständig ist?
+
+Relational vollständig bedeutet, dass alle Operationen der Relationenalgebra auch durch die Datenbanksprahce darstellbar sind.
 
 ## Zusammenhang Relationenalgebra und SQL Grundlagen
 
