@@ -40,7 +40,8 @@ Die Firma AutoNomiX ist eine Informatikfirma mit 57 Mitarbeitern, welche an eine
 
 ### Wo sehen Sie in diesem Beispiel eine Generalisierung, also eine „ist - ein“ Beziehung? Ist die zugehörige Spezialisierung vollständig?
 Mitarbeiter : Projektleiter, Analyst, Programmierer
-Überlappend vollständig
+
+Überlappend unvollständig
 
 ### Wo sehen Sie in diesem Beispiel eine Aggregation, also eine „teil-von“ Beziehung?
 Arbeitsplatz : teil von Büro
