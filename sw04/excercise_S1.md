@@ -50,12 +50,14 @@ FROM    MITARBEITER
 ### Wie wird der Join in SQL umgesetzt?
 
 ```
-SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
-FROM Orders
-INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+SELECT      Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM        Orders
+INNER JOIN  Customers ON Orders.CustomerID=Customers.CustomerID;
 ```
 
 ### Wie zeigt sich die Eigenschaft von SQL, dass sie deskriptiv ist?
+
+SQL ist desktiptiv, weil es nicht den Lösungsweg, sondern das gewünschte Resultat beschreibt.
 
 ### Was bedeutet die Aussage, dass SQL relational vollständig ist?
 
@@ -68,16 +70,43 @@ Die Beispiele beziehen sich auf die Uni-Datenbank. Sie können den SQL-Code auch
 
 ### Selektion - Welche Professoren haben Rang 'C4'?
 
+```
+SELECT  *
+FROM    PROFESSOREN
+WHERE   Range='C4'
+```
+σRang=C4(PROFESSOREN)
+
 ### Projektion - Projizieren Sie die Relation Professoren auf die Attribute Personennummer und Name. Tun Sie in einem zweiten Schritt dasselbe für die Relation Assistenten.
+
+```
+SELECT  PersNr, Name
+FROM    PROFESSOREN
+```
+πPersNr,Name(PROFESSOREN)
 
 ### Kreuzprodukt - Welche mögliche Kombinationen von Vorlesungen und Professoren gibt es?
 
-### Verbund
+```
+SELECT  Personennummer, Name
+FROM    PROFESSOREN, VORLESUNGEN
+WHERE   PersNr=gelesenVon
+```
+πName,Titel σPersNr=gelesenVon(PROFESSOREN x VORLESUNGEN)
 
-#### Welche Vorlesungen können als Nachfolger der Vorlesungen mit 4 SWS besucht werden?
-#### Listen Sie in der ersten Spalte die Titel der Vorlesungen mit 4 SWS auf, und in der zweiten Spalte die Titel ihrer möglichen Nachfolger.
-#### Zeichnen sie zudem den zugehörigen Abfragebaum.
-#### Zeichnen sie zudem den zugehörigen Abfragebaum.
+### Verbund - Welche Vorlesungen können als Nachfolger der Vorlesungen mit 4 SWS besucht werden?
+
+Listen Sie in der ersten Spalte die Titel der Vorlesungen mit 4 SWS auf, und in der zweiten Spalte die Titel ihrer möglichen Nachfolger.
+Zeichnen sie zudem den zugehörigen Abfragebaum.
+
+```
+SELECT  Titel, Nachfolger
+FROM    Vorlesungen, voraussetzen
+WHERE   SWS='4' AND VorlNr=Vorgänger
+```
+πTitel,Nachfolger σSWS=’4’,VorlNr=Vorgänger(VORLESUNGEN IXI voraussetzen)
+
+TODO : Abfragebaum
 
 ## Daten manipulieren
 
