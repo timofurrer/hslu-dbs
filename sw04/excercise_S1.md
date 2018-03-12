@@ -9,7 +9,24 @@ Lesen Sie Kapitel 3.1 – 3.3 aus dem Buch von Meier & Kaufmann (2016)
 
 ### Welche Benutzergruppen gibt es und wie interagieren sie mit der Datenbank?
 
+* Datenarchitekt/in: Tabellen und Formate einheitlich festlegen und Daten beschreiben
+* Datenbank-Spezialist/in: Tabellen installieren, kontrollieren und sicherstellen und Benutzerrechte vergeben
+* Anwendungs-programmierer/in: Tabellen abfragen, verändern oder löschen
+* Datenanalyst/in: Tabellen abfragen, auswerten und verändern
+
 ### Was ist der Unterschied zwischen mengenorientierten und relationalen Operatoren?
+
+Mengenorientierte Operatoren:
+* Vereinigung
+* Durchschnitt
+* Subtraktion
+* Kartesisches Produkt
+
+Relationale Operatoren:
+* Projektion
+* Selektion
+* Verbund (Join)
+* Division
 
 ### Wie ist der Zusammenhang von Kreuzprodukt und Division?
 
