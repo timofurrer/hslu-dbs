@@ -122,6 +122,36 @@ TODO : Abfragebaum
 
 ### Wieviele Professoren mit Rang C3 gibt es?
 
+```
+SELECT  *
+FROM    Professoren
+WHERE   Rang='C3'
+```
+Es gibt 3 Professoren mit Rang C3.
+
 ### Was ist die minimale, maximale und durchschnittliche Anzahl Semester?
 
+Minimal: 2 Semester
+```
+SELECT  MIN(Semester)
+FROM    STUDENTEN
+```
+Maximal: 18 Semester
+```
+SELECT  MAX(Semester)
+FROM    STUDENTEN
+```
+Durchschnitt: 7.625 Semester
+```
+SELECT  AVG(Semester)
+FROM    STUDENTEN
+```
+
 ### Wieviele Semesterwochenstunden (SWS, ~= ECTS) unterrichten die Professoren mit Rang C4?
+
+```
+SELECT  count(SWS)
+FROM    PROFESSOREN, VORLESUNGEN
+WHERE   Rang='C4'
+```
+Es werdeb 40 SWS von Professoren mit Rang C4 unterrichtet.
