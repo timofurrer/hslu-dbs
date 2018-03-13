@@ -9,14 +9,30 @@ Gruppe 04 - Timo Furrer, David Staub, Dominik Waldispühl
 ### Mengenvergleich (ln)
 Finden Sie die Namen der Professoren, die noch keine Prüfung abgenommen haben.
 
+```sql
+SELECT name 
+FROM professoren 
+WHERE persnr NOT IN (
+  SELECT persnr 
+  FROM pruefen
+);
+```
+
 
 ### Left outer join
 Geben Sie eine Liste aller Professoren (alle Attribute) aus. Sofern ein Professor einen Assistenten hat, soll dessen Name und Fachgebiet ebenfalls ausgegeben werden.
+
+```sql
+SELECT * FROM professoren LEFT OUTER JOIN assistenten ON assistenten.boss = professoren.persnr;
+```
 
 
 ### Full outer join
 Geben Sie eine Liste aller Studenten (MatrNr und Name) und aller Vorlesungen (VorlNr und Titel), die sie hören. Sofern ein Student keine Vorlesung hört oder eine Vorlesung nicht besucht wird, sollen die entsprechenden Informationen des Studenten trotzdem ausgegeben werden.
 
+```sql
+SELECT s.matrnr, s.name, v.vorlnr, v.titel FROM vorlesungen as v FULL OUTER JOIN hoeren ON hoeren.vorlnr = v.vorlnr FULL OUTER JOIN studenten as s ON s.matrnr = hoeren.matrnr;
+```
 
 ### Right outer join
 Schauen Sie sich folgenden äusseren join an:
