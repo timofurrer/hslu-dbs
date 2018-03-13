@@ -54,29 +54,36 @@ Die Beispiele beziehen sich auf die Uni-Datenbank.
 Projizieren Sie die Relation Professoren auf die Attribute Personennummer und Name. Benennen Sie dabei das Attribut „PersNr“ in „Nr“ um. Benennen Sie die neue Relation „P“, und speichern Sie sie für die weitere Verwendung. 
 
 Tun Sie das gleiche für die Relation Assistenten, und nennen Sie diese Relation "A".
-```
 
+```sql
+CREATE VIEW P as SELECT persnr as Nr, name FROM professoren;
+CREATE VIEW A as SELECT persnr as Nr, name FROM assistenten;
 ```
 
 ### Vereinigung
 Vereinigen Sie die beiden vorhergehend kreierten Relationen, und nennen Sie das Resultat Mitarbeiter.
-```
 
+```sql
+CREATE VIEW Mitarbeiter as SELECT * FROM P UNION SELECT * FROM A;
 ```
 
 ### Schnittmenge
 Welches sind die Namen der Mitarbeiter, die gleichzeitig Professor und Assistent sind?
-```
 
+```sql
+SELECT name FROM professoren INTERSECT SELECT name FROM assistenten;
 ```
 
 ### Differenz
-Welches sind die Namen der Assistenten, welche nicht gleichzeitig Student sind?
-```
 
+Welches sind die Namen der Assistenten, welche nicht gleichzeitig Student sind?
+
+```sql
+SELECT name FROM assistenten EXCEPT SELECT name FROM studenten;
 ```
 
 ### Division
+
 Welches sind die Namen der Studenten, welche alle Vorlesungen besucht haben?
 
 Testen können Sie dies mit folgendem Studentendatensatz:
