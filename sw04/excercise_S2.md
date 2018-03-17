@@ -44,7 +44,8 @@ FULL OUTER JOIN studenten as s
 
 ### Right outer join
 Schauen Sie sich folgenden äusseren join an:
-```
+
+```sql
 select v.Titel, s.name
 from vorlesungen v
 left outer join hören h on h.VorlNr = v.VorlNr
