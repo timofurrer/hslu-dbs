@@ -23,7 +23,10 @@ WHERE persnr NOT IN (
 Geben Sie eine Liste aller Professoren (alle Attribute) aus. Sofern ein Professor einen Assistenten hat, soll dessen Name und Fachgebiet ebenfalls ausgegeben werden.
 
 ```sql
-SELECT * FROM professoren LEFT OUTER JOIN assistenten ON assistenten.boss = professoren.persnr;
+SELECT * 
+FROM professoren 
+LEFT OUTER JOIN assistenten 
+    ON assistenten.boss = professoren.persnr;
 ```
 
 
@@ -31,7 +34,12 @@ SELECT * FROM professoren LEFT OUTER JOIN assistenten ON assistenten.boss = prof
 Geben Sie eine Liste aller Studenten (MatrNr und Name) und aller Vorlesungen (VorlNr und Titel), die sie hören. Sofern ein Student keine Vorlesung hört oder eine Vorlesung nicht besucht wird, sollen die entsprechenden Informationen des Studenten trotzdem ausgegeben werden.
 
 ```sql
-SELECT s.matrnr, s.name, v.vorlnr, v.titel FROM vorlesungen as v FULL OUTER JOIN hoeren ON hoeren.vorlnr = v.vorlnr FULL OUTER JOIN studenten as s ON s.matrnr = hoeren.matrnr;
+SELECT s.matrnr, s.name, v.vorlnr, v.titel 
+FROM vorlesungen as v 
+FULL OUTER JOIN hoeren 
+    ON hoeren.vorlnr = v.vorlnr 
+FULL OUTER JOIN studenten as s 
+    ON s.matrnr = hoeren.matrnr;
 ```
 
 ### Right outer join
@@ -71,7 +79,11 @@ CREATE VIEW Mitarbeiter as SELECT * FROM P UNION SELECT * FROM A;
 Welches sind die Namen der Mitarbeiter, die gleichzeitig Professor und Assistent sind?
 
 ```sql
-SELECT name FROM professoren INTERSECT SELECT name FROM assistenten;
+SELECT name 
+FROM professoren 
+INTERSECT 
+SELECT name 
+FROM assistenten;
 ```
 
 ### Differenz
@@ -79,7 +91,11 @@ SELECT name FROM professoren INTERSECT SELECT name FROM assistenten;
 Welches sind die Namen der Assistenten, welche nicht gleichzeitig Student sind?
 
 ```sql
-SELECT name FROM assistenten EXCEPT SELECT name FROM studenten;
+SELECT name 
+FROM assistenten 
+EXCEPT 
+SELECT name 
+FROM studenten;
 ```
 
 ### Division
