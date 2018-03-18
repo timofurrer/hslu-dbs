@@ -38,7 +38,7 @@ Keine Antwort(?)
 
 ### Wie wird die Selektion in SQL umgesetzt?
 
-```
+```sql
 SELECT  *
 FROM    MITARBEITER
 WHERE   Ort='Liestal' AND Unt='A6'
@@ -46,14 +46,14 @@ WHERE   Ort='Liestal' AND Unt='A6'
 
 ### Wie wird die Projektion in SQL umgesetzt?
 
-```
+```sql
 SELECT  Unt, Name
 FROM    MITARBEITER
 ```
 
 ### Wie wird der Join in SQL umgesetzt?
 
-```
+```sql
 SELECT      Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 FROM        Orders
 INNER JOIN  Customers ON Orders.CustomerID=Customers.CustomerID;
@@ -74,7 +74,7 @@ Die Beispiele beziehen sich auf die Uni-Datenbank.
 
 ### Selektion - Welche Professoren haben Rang 'C4'?
 
-```
+```sql
 SELECT  *
 FROM    PROFESSOREN
 WHERE   Range='C4'
@@ -83,7 +83,7 @@ WHERE   Range='C4'
 
 ### Projektion - Projizieren Sie die Relation Professoren auf die Attribute Personennummer und Name. Tun Sie in einem zweiten Schritt dasselbe für die Relation Assistenten.
 
-```
+```sql
 SELECT  PersNr, Name
 FROM    PROFESSOREN
 ```
@@ -91,7 +91,7 @@ FROM    PROFESSOREN
 
 ### Kreuzprodukt - Welche mögliche Kombinationen von Vorlesungen und Professoren gibt es?
 
-```
+```sql
 SELECT  Personennummer, Name
 FROM    PROFESSOREN, VORLESUNGEN
 WHERE   PersNr=gelesenVon
@@ -102,7 +102,7 @@ WHERE   PersNr=gelesenVon
 
 Listen Sie in der ersten Spalte die Titel der Vorlesungen mit 4 SWS auf, und in der zweiten Spalte die Titel ihrer möglichen Nachfolger.
 
-```
+```sql
 SELECT  Titel, Nachfolger
 FROM    Vorlesungen, voraussetzen
 WHERE   SWS='4' AND VorlNr=Vorgänger
@@ -113,7 +113,7 @@ WHERE   SWS='4' AND VorlNr=Vorgänger
 
 ### Erstellen Sie eine Tabelle Hilfsassistenten, welche die gleichen Attribute wie die Tabelle Assistenten aufweist.
 
-```
+```sql
 CREATE TABLE Hilfsassistenten
 ( 
   HA# INT NOT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE Hilfsassistenten
 
 ### Fügen Sie die Hilfsassistenten Chomsky (Fachgebiet Sprachphilosophie, arbeitet für Kant) und Newton (Naturphilosophie, Curie) ein.
 
-```
+```sql
 INSERT INTO Hilfsassistenten
 VALUES ('HA1', 'Chomsky', 'Sprachphilosophie', 2137)
 
@@ -135,14 +135,14 @@ VALUES ('HA2', 'Newton', 'Naturphilosophie', 2136)
 
 ### Ändern Sie das Fachgebiet von Newton zu idealistische Metaphysik.
 
-```
+```sql
 UPDATE  Hilfsassistenten
 SET     Fachgebiet='Idealistische Metaphysik'
 WHERE   Name='Newton'
 ```
 
 ### Löschen Sie Chomsky
-
+sql
 ```
 DELETE  FROM Hilfsassistenten
 WHERE   Name='Chomsky'
@@ -152,7 +152,7 @@ WHERE   Name='Chomsky'
 
 ### Wieviele Professoren mit Rang C3 gibt es?
 
-```
+```sql
 SELECT  *
 FROM    Professoren
 WHERE   Rang='C3'
@@ -162,24 +162,24 @@ Es gibt 3 Professoren mit Rang C3.
 ### Was ist die minimale, maximale und durchschnittliche Anzahl Semester?
 
 Minimal: 2 Semester
-```
+```sql
 SELECT  MIN(Semester)
 FROM    STUDENTEN
 ```
 Maximal: 18 Semester
-```
+```sql
 SELECT  MAX(Semester)
 FROM    STUDENTEN
 ```
 Durchschnitt: 7.625 Semester
-```
+```sql
 SELECT  AVG(Semester)
 FROM    STUDENTEN
 ```
 
 ### Wieviele Semesterwochenstunden (SWS, ~= ECTS) unterrichten die Professoren mit Rang C4?
 
-```
+```sql
 SELECT  count(SWS)
 FROM    PROFESSOREN, VORLESUNGEN
 WHERE   Rang='C4'
