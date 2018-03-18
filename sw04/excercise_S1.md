@@ -30,7 +30,11 @@ Relationale Operatoren:
 
 ### Wie ist der Zusammenhang von Kreuzprodukt und Division?
 
+Für eine Division muss zwingend zuerst das Kreuzprodukt gebildet werden.
+
 ### Was ist der Zusammehang von mengenorientierten Abfragesprachen und der Relationenalgebra?
+
+Keine Antwort(?)
 
 ### Wie wird die Selektion in SQL umgesetzt?
 
@@ -66,7 +70,7 @@ Relational vollständig bedeutet, dass alle Operationen der Relationenalgebra au
 ## Zusammenhang Relationenalgebra und SQL Grundlagen
 
 Für die folgenden Aufgaben, geben Sie die Lösung jeweils (1) als SQL-Code und (2) als mathematische Formel der Relationenalgebra an.
-Die Beispiele beziehen sich auf die Uni-Datenbank. Sie können den SQL-Code auch auf dem Server ausprobieren (siehe Folien)
+Die Beispiele beziehen sich auf die Uni-Datenbank.
 
 ### Selektion - Welche Professoren haben Rang 'C4'?
 
@@ -111,10 +115,12 @@ WHERE   SWS='4' AND VorlNr=Vorgänger
 
 ```
 CREATE TABLE Hilfsassistenten
-( HA# INT NOT NULL,
-Name Varchar(20),
-Fachgebiet Varchar(20),
-Boss INT)
+( 
+  HA# INT NOT NULL,
+  Name Varchar(20),
+  Fachgebiet Varchar(20),
+  Boss INT
+)
 ```
 
 ### Fügen Sie die Hilfsassistenten Chomsky (Fachgebiet Sprachphilosophie, arbeitet für Kant) und Newton (Naturphilosophie, Curie) ein.
@@ -130,16 +136,16 @@ VALUES ('HA2', 'Newton', 'Naturphilosophie', 2136)
 ### Ändern Sie das Fachgebiet von Newton zu idealistische Metaphysik.
 
 ```
-UPDATE Hilfsassistenten
-SET Fachgebiet='Idealistische Metaphysik'
-WHERE Name='Newton'
+UPDATE  Hilfsassistenten
+SET     Fachgebiet='Idealistische Metaphysik'
+WHERE   Name='Newton'
 ```
 
 ### Löschen Sie Chomsky
 
 ```
-DELETE FROM Hilfsassistenten
-WHERE Name='Chomsky'
+DELETE  FROM Hilfsassistenten
+WHERE   Name='Chomsky'
 ```
 
 ## Daten aggregieren
@@ -178,4 +184,4 @@ SELECT  count(SWS)
 FROM    PROFESSOREN, VORLESUNGEN
 WHERE   Rang='C4'
 ```
-Es werdeb 40 SWS von Professoren mit Rang C4 unterrichtet.
+Es werden 40 SWS von Professoren mit Rang C4 unterrichtet.
