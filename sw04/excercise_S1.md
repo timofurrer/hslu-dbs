@@ -97,7 +97,6 @@ WHERE   PersNr=gelesenVon
 ### Verbund - Welche Vorlesungen können als Nachfolger der Vorlesungen mit 4 SWS besucht werden?
 
 Listen Sie in der ersten Spalte die Titel der Vorlesungen mit 4 SWS auf, und in der zweiten Spalte die Titel ihrer möglichen Nachfolger.
-Zeichnen sie zudem den zugehörigen Abfragebaum.
 
 ```
 SELECT  Titel, Nachfolger
@@ -106,17 +105,42 @@ WHERE   SWS='4' AND VorlNr=Vorgänger
 ```
 πTitel,Nachfolger σSWS=’4’,VorlNr=Vorgänger(VORLESUNGEN IXI voraussetzen)
 
-TODO : Abfragebaum
-
 ## Daten manipulieren
 
 ### Erstellen Sie eine Tabelle Hilfsassistenten, welche die gleichen Attribute wie die Tabelle Assistenten aufweist.
 
+```
+CREATE TABLE Hilfsassistenten
+( HA# INT NOT NULL,
+Name Varchar(20),
+Fachgebiet Varchar(20),
+Boss INT)
+```
+
 ### Fügen Sie die Hilfsassistenten Chomsky (Fachgebiet Sprachphilosophie, arbeitet für Kant) und Newton (Naturphilosophie, Curie) ein.
+
+```
+INSERT INTO Hilfsassistenten
+VALUES ('HA1', 'Chomsky', 'Sprachphilosophie', 2137)
+
+INSERT INTO Hilfsassistenten
+VALUES ('HA2', 'Newton', 'Naturphilosophie', 2136)
+```
 
 ### Ändern Sie das Fachgebiet von Newton zu idealistische Metaphysik.
 
+```
+UPDATE Hilfsassistenten
+SET Fachgebiet='Idealistische Metaphysik'
+WHERE Name='Newton'
+```
+
 ### Löschen Sie Chomsky
+
+```
+DELETE FROM Hilfsassistenten
+WHERE Name='Chomsky'
+```
 
 ## Daten aggregieren
 
