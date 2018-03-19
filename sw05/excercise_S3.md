@@ -140,3 +140,12 @@ from pfad
 ## Windowing
 
 ### Schreiben Sie eine Query, welche pro Professor den Namen, die Anzahl Semesterwochenstunden (SWS) und dazu den SWS-Rang angibt. Der SWS‐Rang gibt an, welcher Professor am meisten Vorlesungsstunden pro Semester gibt (SWS-Rank = 1), welcher am zweitmeisten unterrichtet (SWS-Rank = 2), usw. Professoren, die gleichviel unterrichten, sind auf dem gleichen SWS-Rang. Verwenden Sie dafür eine Window Function.
+
+```sql
+SELECT p.name, sum(v.sws) as "SWS", 
+   dense_rank() over(ORDER BY sum(sws) DESC) AS "SWS-Rang" 
+FROM professoren as p 
+INNER JOIN vorlesungen as v 
+   ON v.gelesenvon = p.persnr 
+GROUP BY p.name;
+```
