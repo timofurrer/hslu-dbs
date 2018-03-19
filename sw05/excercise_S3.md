@@ -40,10 +40,15 @@ FROM information_schema.tables;
 ### Fügen Sie zuerst einen Studenten mit leerer Anzahl Semester ein. Zählen Sie dann mit folgender Query alle Studenten mit immer wahrer Bedingung auf den Semestern:
 
 ```sql
-INSERT INTO Studenten VALUES (0, 'Precht', NULL);
-SELECT 1, COUNT(*) FROM Studenten
-WHERE Semester < 13 or semester >= 13
-UNION 2, SELECT COUNT(*) FROM Studenten;
+INSERT INTO Studenten 
+VALUES (0, 'Precht', NULL);
+
+SELECT 1, COUNT(*) 
+FROM Studenten
+WHERE Semester < 13 
+   OR semester >= 13
+UNION SELECT 2, COUNT(*) 
+      FROM Studenten;
 ```
 
 ### Was fällt ihnen auf? Warum ist das Resultat unlogisch? Wie erklärt sich dieser Effekt?
@@ -57,8 +62,8 @@ Beim `*` wird dieser `NULL` Wert ebenfalls mitgezaehlt.
 SELECT count(*) 
 FROM studenten 
 WHERE semester is null 
-  OR semester < 13 
-  OR semester >= 13;
+   OR semester < 13 
+   OR semester >= 13;
 ```
 
 ## Existenz
@@ -95,10 +100,10 @@ Gegeben ist folgende Fallunterscheidung:
 ```sql
 SELECT MatrNr, 
 CASE WHEN Note < 1.5 THEN 'sehr gut'
-WHEN Note < 2.5 THEN 'gut'
-WHEN Note < 3.5 THEN 'befriedigend'
-WHEN Note <= 4.0 THEN 'ausreichend'
-ELSE 'nicht bestanden' END as bewertung
+     WHEN Note < 2.5 THEN 'gut'
+     WHEN Note < 3.5 THEN 'befriedigend'
+     WHEN Note <= 4.0 THEN 'ausreichend'
+     ELSE 'nicht bestanden' END as bewertung
 FROM prüfen
 ```
 
@@ -112,15 +117,22 @@ Weil jeweils nur ein `THEN` pro `CASE` ausgefuehrt wird -> First Match. :tada:
 
 ```sql
 with recursive r as (
-select vg.titel as v, nf.titel as n, 1 as l
-from voraussetzen vr join vorlesungen vg
-on vg.vorlnr = vr.vorgänger
-join vorlesungen nf on nf.vorlnr = vr.nachfolger),
+  select vg.titel as v, nf.titel as n, 1 as l
+  from voraussetzen vr 
+  join vorlesungen vg
+    on vg.vorlnr = vr.vorgänger
+  join vorlesungen nf 
+    on nf.vorlnr = vr.nachfolger),
 pfad(von,nach,länge,folge) as (
-select v,n,1,v || ','|| n from r union all
-select p.von, e.n, p.länge+1, p.folge ||','|| e.n
-from r e join pfad p on p.nach = e.v )
-select * from pfad
+  select v,n,1,v || ','|| n 
+  from r 
+  union all
+  select p.von, e.n, p.länge+1, p.folge ||','|| e.n
+  from r e 
+  join pfad p 
+    on p.nach = e.v )
+select * 
+from pfad
 ```
 
 ### Lassen Sie die Query laufen. Was macht dies genau? Wo befindet sich der Rekursionsschritt? Erklären Sie die Funktionsweise dieser Query.
