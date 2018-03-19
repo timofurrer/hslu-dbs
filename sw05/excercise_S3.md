@@ -37,7 +37,7 @@ FROM information_schema.tables;
 
 ## Nullwerte
 
--> Fügen Sie zuerst einen Studenten mit leerer Anzahl Semester ein. Zählen Sie dann mit folgender Query alle Studenten mit immer wahrer Bedingung auf den Semestern:
+### Fügen Sie zuerst einen Studenten mit leerer Anzahl Semester ein. Zählen Sie dann mit folgender Query alle Studenten mit immer wahrer Bedingung auf den Semestern:
 
 ```sql
 INSERT INTO Studenten VALUES (0, 'Precht', NULL);
