@@ -10,6 +10,8 @@ Die folgenden Übungen basieren auf der Uni-DB auf einem PostgreSQL-Server
 
 -> Beschreiben Sie einen Use Case, in dem Metadaten für Sie notwendig sind, und wo Sie dann das Dictionary verwenden können, um Beschreibungen von Tabellen und Spalten zu durchsuchen.
 
+Wenn man eine fremde Datenbank analysieren moechte. Man bekommt ueber die Metadaten einen guten Ueberblick ueber die vorhandenen Tabellen und deren Schema.
+
 -> Welche Tabelle enthält die Spalte "Fachgebiet"?
 
 ```sql
