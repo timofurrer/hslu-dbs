@@ -12,6 +12,12 @@ Die folgenden Übungen basieren auf der Uni-DB auf einem PostgreSQL-Server
 
 -> Welche Tabelle enthält die Spalte "Fachgebiet"?
 
+```sql
+SELECT table_name 
+FROM information_schema.columns 
+WHERE column_name = 'fachgebiet';
+```
+
 ### Welche Spalten in der Uni-Datenbank haben den Datentyp Integer?
 
 ### Welche Tabelle enthält das Informations-Schema? Schreiben Sie das entsprechende SQL
