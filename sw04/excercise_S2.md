@@ -51,14 +51,11 @@ from vorlesungen v
 left outer join hören h on h.VorlNr = v.VorlNr
 right outer join Studenten s on s.MatrNr = h.MatrNr
 ```
-**Was geschieht, wenn Sie "right outer join" durch "left outer join" ersetzen?**
-
-Beim 'RIGHT OUTER JOIN' werden alle Studenten ausgegeben, auch jene, die keine Vorlesung besuchen.
-
+#### Was geschieht, wenn Sie "right outer join" durch "left outer join" ersetzen?
+Beim 'RIGHT OUTER JOIN' werden alle Studenten ausgegeben, auch jene, die keine Vorlesung besuchen. <br>
 Beim 'LEFT OUTER JOIN' werden alle Vorlesungen ausgegeben, auch jene, die von keinem Studenten besucht werden.
 
-**Was geschieht, wenn Sie in der letzten Zeile "full outer join" verwenden?**
-
+#### Was geschieht, wenn Sie in der letzten Zeile "full outer join" verwenden?
 Es werden alle Studenten und alle Vorlesungen ausgegeben.
 
 ## Zusammenhang Relationenalgebra und SQL: Mengenorientierte Operatoren
