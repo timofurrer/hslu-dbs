@@ -70,6 +70,8 @@ FROM prüfen
 
 ### Warum wird hier jeweils nur geprüft, ob der Wert kleiner als die Untergrenze ist, aber nicht, ob er auch grösser als die Obergrenze ist?
 
+Weil jeweils nur ein `THEN` pro `CASE` ausgefuehrt wird -> First Match. :tada:
+
 ## Reskursion
 
 -> Gegeben folgende rekursive SQL-Query auf die Uni-DB
