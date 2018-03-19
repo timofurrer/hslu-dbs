@@ -52,10 +52,12 @@ left outer join hören h on h.VorlNr = v.VorlNr
 right outer join Studenten s on s.MatrNr = h.MatrNr
 ```
 **Was geschieht, wenn Sie "right outer join" durch "left outer join" ersetzen?**
+
 Beim 'RIGHT OUTER JOIN' werden alle Studenten ausgegeben, auch jene, die keine Vorlesung besuchen.
 Beim 'LEFT OUTER JOIN' werden alle Vorlesungen ausgegeben, auch jene, die von keinem Studenten besucht werden.
 
 **Was geschieht, wenn Sie in der letzten Zeile "full outer join" verwenden?**
+
 Es werden alle Studenten und alle Vorlesungen ausgegeben.
 
 ## Zusammenhang Relationenalgebra und SQL: Mengenorientierte Operatoren
@@ -107,10 +109,17 @@ FROM studenten;
 Welches sind die Namen der Studenten, welche alle Vorlesungen besucht haben?
 
 Testen können Sie dies mit folgendem Studentendatensatz:
-```
+```sql
 insert into Studenten values (123, 'Streber', 7);
 insert into hören select distinct 123, VorlNr from vorlesungen;
 ```
-```
-
+Mit folgendem Query:
+```sql
+SELECT name 
+FROM (SELECT s.name, COUNT (*) as num
+      FROM studenten s
+      RIGHT OUTER JOIN hoeren h ON s.matrnr = h.matrnr
+      GROUP BY name) as stud 
+WHERE num = (SELECT COUNT(*)
+             FROM vorlesungen);
 ```
