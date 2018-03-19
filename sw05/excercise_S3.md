@@ -108,7 +108,8 @@ Weil jeweils nur ein `THEN` pro `CASE` ausgefuehrt wird -> First Match. :tada:
 
 ## Reskursion
 
--> Gegeben folgende rekursive SQL-Query auf die Uni-DB
+### Gegeben folgende rekursive SQL-Query auf die Uni-DB
+
 ```sql
 with recursive r as (
 select vg.titel as v, nf.titel as n, 1 as l
@@ -126,4 +127,4 @@ select * from pfad
 
 ## Windowing
 
--> Schreiben Sie eine Query, welche pro Professor den Namen, die Anzahl Semesterwochenstunden (SWS) und dazu den SWS-Rang angibt. Der SWS‐Rang gibt an, welcher Professor am meisten Vorlesungsstunden pro Semester gibt (SWS-Rank = 1), welcher am zweitmeisten unterrichtet (SWS-Rank = 2), usw. Professoren, die gleichviel unterrichten, sind auf dem gleichen SWS-Rang. Verwenden Sie dafür eine Window Function.
+### Schreiben Sie eine Query, welche pro Professor den Namen, die Anzahl Semesterwochenstunden (SWS) und dazu den SWS-Rang angibt. Der SWS‐Rang gibt an, welcher Professor am meisten Vorlesungsstunden pro Semester gibt (SWS-Rank = 1), welcher am zweitmeisten unterrichtet (SWS-Rank = 2), usw. Professoren, die gleichviel unterrichten, sind auf dem gleichen SWS-Rang. Verwenden Sie dafür eine Window Function.
