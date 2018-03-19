@@ -22,6 +22,11 @@ WHERE column_name = 'fachgebiet';
 
 ### Welche Tabelle enthält das Informations-Schema? Schreiben Sie das entsprechende SQL
 
+```sql
+SELECT table_name 
+FROM information_schema.tables;
+```
+
 ## Nullwerte
 
 -> Fügen Sie zuerst einen Studenten mit leerer Anzahl Semester ein. Zählen Sie dann mit folgender Query alle Studenten mit immer wahrer Bedingung auf den Semestern:
