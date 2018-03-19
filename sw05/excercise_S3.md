@@ -21,7 +21,7 @@ WHERE column_name = 'fachgebiet';
 ### Welche Spalten in der Uni-Datenbank haben den Datentyp Integer?
 
 ```sql
-SELECT * 
+SELECT column_name
 FROM information_schema.columns 
 WHERE data_type = 'integer';
 ```
