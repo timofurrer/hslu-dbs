@@ -48,7 +48,18 @@ UNION 2, SELECT COUNT(*) FROM Studenten;
 
 ### Was fällt ihnen auf? Warum ist das Resultat unlogisch? Wie erklärt sich dieser Effekt?
 
+Beim ersten `SELECT` wird der Student nicht mitgezaehlt, weil ein Semester den Wert `NULL` hat und somit weder kleiner noch groesser gleich 13 ist.
+Beim `*` wird dieser `NULL` Wert ebenfalls mitgezaehlt.
+
 ### Wie müssen Sie die Query definieren, damit Sie auch mit Nullwerten ein konsistentes Resultat gibt?
+
+```sql
+SELECT count(*) 
+FROM studenten 
+WHERE semester is null 
+  OR semester < 13 
+  OR semester >= 13;
+```
 
 ## Existenz
 
