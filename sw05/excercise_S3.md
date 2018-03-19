@@ -65,7 +65,28 @@ WHERE semester is null
 
 ### Was ist der Unterschied zwischen Mengenvergleichen mit "in" und "exists"? Warum kann man etwas nur mit dem exists-Operator abfragen?
 
--> Machen Sie ein Beispiel in SQL mit der Uni-DB und der Tabelle „prüfen“. Fragen Sie, in einer Abfrage, ohne join, unter Verwendung des „exists“‐Operators. die Prüfungen ab, welche für Studenten mit mehr als 10 Semestern von Professoren mit Rang C4 durchgeführt wurden.
+* Bei `IN` wird immer das gesamte Subquery durchgefuehrt. 
+* Bei `EXISTS` wird das Subquery beim ersten Match abgebrochen - wodurch es vorallem bei grossen Datenmengen schneller ist.
+* Bei kleinen Datenmengen ist `IN` performanter.
+* `EXISTS` kann `NULL`-Vergleiche durchfuehren - `IN` kann das nicht.
+
+### Machen Sie ein Beispiel in SQL mit der Uni-DB und der Tabelle „prüfen“. Fragen Sie, in einer Abfrage, ohne join, unter Verwendung des „exists“‐Operators. die Prüfungen ab, welche für Studenten mit mehr als 10 Semestern von Professoren mit Rang C4 durchgeführt wurden.
+
+```sql
+SELECT * 
+FROM pruefen 
+WHERE EXISTS (
+  SELECT * 
+  FROM studenten 
+  WHERE studenten.matrnr = pruefen.matrnr 
+    AND studenten.semester > 10
+) AND EXISTS (
+  SELECT * 
+  FROM professoren 
+  WHERE professoren.persnr = pruefen.persnr 
+    AND professoren.rang = 'C4'
+);
+```
 
 ## Fallunterscheidung
 
