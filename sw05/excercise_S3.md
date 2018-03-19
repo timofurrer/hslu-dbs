@@ -20,6 +20,12 @@ WHERE column_name = 'fachgebiet';
 
 ### Welche Spalten in der Uni-Datenbank haben den Datentyp Integer?
 
+```sql
+SELECT * FROM 
+information_schema.columns 
+WHERE data_type = 'integer';
+```
+
 ### Welche Tabelle enthält das Informations-Schema? Schreiben Sie das entsprechende SQL
 
 ```sql
