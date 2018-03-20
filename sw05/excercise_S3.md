@@ -59,9 +59,9 @@ Beim `*` wird dieser `NULL` Wert ebenfalls mitgezaehlt.
 ### Wie müssen Sie die Query definieren, damit Sie auch mit Nullwerten ein konsistentes Resultat gibt?
 
 ```sql
-SELECT count(*) 
+SELECT COUNT(*) 
 FROM studenten 
-WHERE semester is null 
+WHERE semester IS NULL 
    OR semester < 13 
    OR semester >= 13;
 ```
@@ -103,7 +103,7 @@ CASE WHEN Note < 1.5 THEN 'sehr gut'
      WHEN Note < 2.5 THEN 'gut'
      WHEN Note < 3.5 THEN 'befriedigend'
      WHEN Note <= 4.0 THEN 'ausreichend'
-     ELSE 'nicht bestanden' END as bewertung
+     ELSE 'nicht bestanden' END AS bewertung
 FROM prüfen
 ```
 
@@ -116,23 +116,23 @@ Weil jeweils nur ein `THEN` pro `CASE` ausgefuehrt wird -> First Match. :tada:
 ### Gegeben folgende rekursive SQL-Query auf die Uni-DB
 
 ```sql
-with recursive r as (
-  select vg.titel as v, nf.titel as n, 1 as l
-  from voraussetzen vr 
-  join vorlesungen vg
-    on vg.vorlnr = vr.vorgänger
-  join vorlesungen nf 
-    on nf.vorlnr = vr.nachfolger),
-pfad(von,nach,länge,folge) as (
-  select v,n,1,v || ','|| n 
-  from r 
-  union all
-  select p.von, e.n, p.länge+1, p.folge ||','|| e.n
-  from r e 
-  join pfad p 
-    on p.nach = e.v )
-select * 
-from pfad
+WITH RECURSIVE r AS (
+  SELECT vg.titel AS v, nf.titel AS n, 1 AS l
+  FROM voraussetzen vr 
+  JOIN vorlesungen vg
+    ON vg.vorlnr = vr.vorgänger
+  JOIN vorlesungen nf 
+    ON nf.vorlnr = vr.nachfolger),
+pfad(von,nach,länge,folge) AS (
+  SELECT v,n,1,v || ','|| n 
+  FROM r 
+  UNION all
+  SELECT p.von, e.n, p.länge+1, p.folge ||','|| e.n
+  FROM r e 
+  JOIN pfad p 
+    ON p.nach = e.v )
+SELECT * 
+FROM pfad
 ```
 
 ### Lassen Sie die Query laufen. Was macht dies genau? Wo befindet sich der Rekursionsschritt? Erklären Sie die Funktionsweise dieser Query.
@@ -142,10 +142,10 @@ from pfad
 ### Schreiben Sie eine Query, welche pro Professor den Namen, die Anzahl Semesterwochenstunden (SWS) und dazu den SWS-Rang angibt. Der SWS‐Rang gibt an, welcher Professor am meisten Vorlesungsstunden pro Semester gibt (SWS-Rank = 1), welcher am zweitmeisten unterrichtet (SWS-Rank = 2), usw. Professoren, die gleichviel unterrichten, sind auf dem gleichen SWS-Rang. Verwenden Sie dafür eine Window Function.
 
 ```sql
-SELECT p.name, sum(v.sws) as "SWS", 
-   dense_rank() over(ORDER BY sum(sws) DESC) AS "SWS-Rang" 
-FROM professoren as p 
-INNER JOIN vorlesungen as v 
+SELECT p.name, sum(v.sws) AS "SWS", 
+   dense_rank() OVER(ORDER BY sum(sws) DESC) AS "SWS-Rang" 
+FROM professoren AS p 
+INNER JOIN vorlesungen AS v 
    ON v.gelesenvon = p.persnr 
 GROUP BY p.name;
 ```
