@@ -126,7 +126,7 @@ WITH RECURSIVE r AS (
 pfad(von,nach,länge,folge) AS (
   SELECT v,n,1,v || ','|| n 
   FROM r 
-  UNION all
+  UNION ALL
   SELECT p.von, e.n, p.länge+1, p.folge ||','|| e.n
   FROM r e 
   JOIN pfad p 
@@ -136,6 +136,87 @@ FROM pfad;
 ```
 
 ### Lassen Sie die Query laufen. Was macht dies genau? Wo befindet sich der Rekursionsschritt? Erklären Sie die Funktionsweise dieser Query.
+
+Zum verstehen des Statements werden die Aliase aussagekräftiger definiert:
+
+```sql
+WITH RECURSIVE recursion AS (
+  SELECT vorgängerVorlesung.titel AS Voraussetzung, nachfolgerVorlesung.titel AS Ermöglicht, 1 AS pfadLänge
+  FROM voraussetzen
+  JOIN vorlesungen vorgängerVorlesung
+    ON vorgängerVorlesung.vorlnr = voraussetzen.vorgaenger
+  JOIN vorlesungen nachfolgerVorlesung 
+    ON nachfolgerVorlesung.vorlnr = voraussetzen.nachfolger),
+pfad(von,nach,länge,folge) AS (
+  SELECT Voraussetzung, Ermöglicht, 1, Voraussetzung || ','|| Ermöglicht 
+  FROM recursion
+  UNION ALL
+  SELECT pfad.von, rec.Ermöglicht, pfad.länge+1, pfad.folge ||','|| rec.Ermöglicht
+  FROM recursion rec
+  JOIN pfad
+    ON pfad.nach = rec.Voraussetzung )
+SELECT * 
+FROM pfad;
+```
+
+Das Query retourniert eine Tabelle, aus der man erkennen kann, welche Vorlesungen man nacheinander Besuchen kann bezw. welche Vorlesungen man zuvor besuchen muss.
+<br>
+Für dies wird in der `recursion` eine Ansicht generiert. Diese zeigt die Titel der Vorlesungen welche eine andere andere Vorlesung als Voraussetzung haben. zudem wird auch der Titel der Vorlesung welche Vorausgesetzt wird angezeigt. Die Pfadlänge wird generell auf 1 gesetzt, da in dieser Ansicht jede Ermöglichte Vorlesung eine Vorlesung als Voraussetzung hat.
+
+```sql
+SELECT vorgängerVorlesung.titel AS Voraussetzung, nachfolgerVorlesung.titel AS Ermöglicht, 1 AS pfadLänge
+  FROM voraussetzen
+  JOIN vorlesungen vorgängerVorlesung
+    ON vorgängerVorlesung.vorlnr = voraussetzen.vorgaenger
+  JOIN vorlesungen nachfolgerVorlesung 
+    ON nachfolgerVorlesung.vorlnr = voraussetzen.nachfolger;
+```
+Dies ist das Ergebnis:
+|voraussetzung       |ermöglicht          |pfadlänge|
+|-------------------:|-------------------:|--------:|
+|Grundzuege          |Ethik               |1        |
+|Grundzuege          |Erkenntnistheorie   |1        |
+|Grundzuege          |Maeeutik            |1        |
+|Erkenntnistheorie   |Wissenschaftstheorie|1        |
+|Ethik               |Wissenschaftstheorie|1        |
+|Ethik               |Bioethik            |1        |
+|Wissenschaftstheorie|Der Wiener Kreis    |1        |
+
+
+
+
+In der Methode `pfad()` wird darauf eine Mengenvereinigung mit `UNION ALL` gemacht. Das erste `SELECT` listet dabei alle einfachen Vorgänger & Nachfolger (Tabelle oben). 
+<br>
+Das zweite `SELECT` macht ein `JOIN` mit der `pfad()` Methode selber (:tada: Rekursion!). Mit `ON pfad.nach = rec.Voraussetzung` wird geschaut ob eine Vorlesung, die in diesem Schritt als Voraussetzung gelistet ist, selber auch noch eine Voraussetzung besitzt, also in der `recursion` als Ermöglicht gelistet ist. Dies trifft z.B. für Erkenntnistheorie zu:
+
+|voraussetzung       |ermöglicht          |pfadlänge|
+|-------------------:|-------------------:|--------:|
+|Grundzuege          |`Erkenntnistheorie` |1        |
+|`Erkenntnistheorie` |Wissenschaftstheorie|1        |
+
+
+Ist dies der Fall werden sie durch das erste Statement vor dem `UNION` zurückgegeben zudem wird durch `pfad.länge+1, pfad.folge ||','|| rec.Ermöglicht` die länge des pfades inkrementiert und die folge um eine Voraussetzung erweitert.
+<br>
+Der  Nach dem dem `UNION` wird dan wiederum nach einer möglichen Voraussetzung gesucht was dann wieder in die `pfad()` Methode führt.
+<br>
+Das Ergebnis des ganzen sieht dann am Ende so aus:
+
+|von                 |nach                |länge|folge                                                              |
+|-------------------:|-------------------:|----:|------------------------------------------------------------------:|
+|Grundzuege          |Ethik               |   1 | Grundzuege,Ethik                                                  |
+|Grundzuege          |Erkenntnistheorie   |   1 | Grundzuege,Erkenntnistheorie                                      |
+|Grundzuege          |Maeeutik            |   1 | Grundzuege,Maeeutik                                               |
+|Erkenntnistheorie   |Wissenschaftstheorie|   1 | Erkenntnistheorie,Wissenschaftstheorie                            |
+|Ethik               |Wissenschaftstheorie|   1 | Ethik,Wissenschaftstheorie                                        |
+|Ethik               |Bioethik            |   1 | Ethik,Bioethik                                                    |
+|Wissenschaftstheorie|Der Wiener Kreis    |   1 | Wissenschaftstheorie,Der Wiener Kreis                             |
+|Grundzuege          |Wissenschaftstheorie|   2 | Grundzuege,Erkenntnistheorie,Wissenschaftstheorie                 |
+|Grundzuege          |Wissenschaftstheorie|   2 | Grundzuege,Ethik,Wissenschaftstheorie                             |
+|Grundzuege          |Bioethik            |   2 | Grundzuege,Ethik,Bioethik                                         |
+|Erkenntnistheorie   |Der Wiener Kreis    |   2 | Erkenntnistheorie,Wissenschaftstheorie,Der Wiener Kreis           |
+|Ethik               |Der Wiener Kreis    |   2 | Ethik,Wissenschaftstheorie,Der Wiener Kreis                       |
+|Grundzuege          |Der Wiener Kreis    |   3 | Grundzuege,Erkenntnistheorie,Wissenschaftstheorie,Der Wiener Kreis|
+|Grundzuege          |Der Wiener Kreis    |   3 | Grundzuege,Ethik,Wissenschaftstheorie,Der Wiener Kreis            |
 
 ## Windowing
 
