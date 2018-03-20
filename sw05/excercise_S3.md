@@ -104,7 +104,7 @@ CASE WHEN Note < 1.5 THEN 'sehr gut'
      WHEN Note < 3.5 THEN 'befriedigend'
      WHEN Note <= 4.0 THEN 'ausreichend'
      ELSE 'nicht bestanden' END AS bewertung
-FROM prüfen
+FROM prüfen;
 ```
 
 ### Warum wird hier jeweils nur geprüft, ob der Wert kleiner als die Untergrenze ist, aber nicht, ob er auch grösser als die Obergrenze ist?
@@ -120,7 +120,7 @@ WITH RECURSIVE r AS (
   SELECT vg.titel AS v, nf.titel AS n, 1 AS l
   FROM voraussetzen vr 
   JOIN vorlesungen vg
-    ON vg.vorlnr = vr.vorgänger
+    ON vg.vorlnr = vr.vorgaenger
   JOIN vorlesungen nf 
     ON nf.vorlnr = vr.nachfolger),
 pfad(von,nach,länge,folge) AS (
@@ -132,7 +132,7 @@ pfad(von,nach,länge,folge) AS (
   JOIN pfad p 
     ON p.nach = e.v )
 SELECT * 
-FROM pfad
+FROM pfad;
 ```
 
 ### Lassen Sie die Query laufen. Was macht dies genau? Wo befindet sich der Rekursionsschritt? Erklären Sie die Funktionsweise dieser Query.
@@ -142,8 +142,8 @@ FROM pfad
 ### Schreiben Sie eine Query, welche pro Professor den Namen, die Anzahl Semesterwochenstunden (SWS) und dazu den SWS-Rang angibt. Der SWS‐Rang gibt an, welcher Professor am meisten Vorlesungsstunden pro Semester gibt (SWS-Rank = 1), welcher am zweitmeisten unterrichtet (SWS-Rank = 2), usw. Professoren, die gleichviel unterrichten, sind auf dem gleichen SWS-Rang. Verwenden Sie dafür eine Window Function.
 
 ```sql
-SELECT p.name, sum(v.sws) AS "SWS", 
-   dense_rank() OVER(ORDER BY sum(sws) DESC) AS "SWS-Rang" 
+SELECT p.name, SUM(v.sws) AS "SWS", 
+   DENSE_RANK() OVER(ORDER BY SUM(sws) DESC) AS "SWS-Rang" 
 FROM professoren AS p 
 INNER JOIN vorlesungen AS v 
    ON v.gelesenvon = p.persnr 
