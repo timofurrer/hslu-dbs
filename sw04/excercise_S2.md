@@ -35,10 +35,10 @@ Geben Sie eine Liste aller Studenten (MatrNr und Name) und aller Vorlesungen (Vo
 
 ```sql
 SELECT s.matrnr, s.name, v.vorlnr, v.titel 
-FROM vorlesungen as v 
+FROM vorlesungen AS v 
 FULL OUTER JOIN hoeren 
     ON hoeren.vorlnr = v.vorlnr 
-FULL OUTER JOIN studenten as s 
+FULL OUTER JOIN studenten AS s 
     ON s.matrnr = hoeren.matrnr;
 ```
 
@@ -46,10 +46,10 @@ FULL OUTER JOIN studenten as s
 Schauen Sie sich folgenden äusseren join an:
 
 ```sql
-select v.Titel, s.name
-from vorlesungen v
-left outer join hören h on h.VorlNr = v.VorlNr
-right outer join Studenten s on s.MatrNr = h.MatrNr
+SELECT v.Titel, s.name
+FROM vorlesungen v
+LEFT OUTER JOIN hoeren h ON h.VorlNr = v.VorlNr
+RIGHT OUTER JOIN Studenten s ON s.MatrNr = h.MatrNr
 ```
 #### Was geschieht, wenn Sie "right outer join" durch "left outer join" ersetzen?
 Beim 'RIGHT OUTER JOIN' werden alle Studenten ausgegeben, auch jene, die keine Vorlesung besuchen. <br>
@@ -68,15 +68,15 @@ Projizieren Sie die Relation Professoren auf die Attribute Personennummer und Na
 Tun Sie das gleiche für die Relation Assistenten, und nennen Sie diese Relation "A".
 
 ```sql
-CREATE VIEW P as SELECT persnr as Nr, name FROM professoren;
-CREATE VIEW A as SELECT persnr as Nr, name FROM assistenten;
+CREATE VIEW P AS SELECT persnr AS Nr, name FROM professoren;
+CREATE VIEW A AS SELECT persnr AS Nr, name FROM assistenten;
 ```
 
 ### Vereinigung
 Vereinigen Sie die beiden vorhergehend kreierten Relationen, und nennen Sie das Resultat Mitarbeiter.
 
 ```sql
-CREATE VIEW Mitarbeiter as SELECT * FROM P UNION SELECT * FROM A;
+CREATE VIEW Mitarbeiter AS SELECT * FROM P UNION SELECT * FROM A;
 ```
 
 ### Schnittmenge
@@ -108,16 +108,16 @@ Welches sind die Namen der Studenten, welche alle Vorlesungen besucht haben?
 
 Testen können Sie dies mit folgendem Studentendatensatz:
 ```sql
-insert into Studenten values (123, 'Streber', 7);
-insert into hören select distinct 123, VorlNr from vorlesungen;
+INSERT INTO Studenten VALUES (123, 'Streber', 7);
+INSERT INTO hoeren SELECT DISTINCT 123, VorlNr FROM vorlesungen;
 ```
 Mit folgendem Query:
 ```sql
 SELECT name 
-FROM (SELECT s.name, COUNT (*) as num
+FROM (SELECT s.name, COUNT (*) AS num
       FROM studenten s
       RIGHT OUTER JOIN hoeren h ON s.matrnr = h.matrnr
-      GROUP BY name) as stud 
+      GROUP BY name) AS stud 
 WHERE num = (SELECT COUNT(*)
              FROM vorlesungen);
 ```
