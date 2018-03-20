@@ -197,7 +197,15 @@ Das zweite `SELECT` macht ein `JOIN` mit der `pfad()` Methode selber (:tada: Rek
 
 Ist dies der Fall werden sie durch das erste Statement vor dem `UNION` zurückgegeben zudem wird durch `pfad.länge+1, pfad.folge ||','|| rec.Ermöglicht` die länge des pfades inkrementiert und die folge um eine Voraussetzung erweitert.
 <br>
-Der  Nach dem dem `UNION` wird dan wiederum nach einer möglichen Voraussetzung gesucht was dann wieder in die `pfad()` Methode führt.
+Der Nach dem dem `UNION` wird dan wiederum nach einer möglichen Voraussetzung gesucht was dann wieder in die `pfad()` Methode führt.
+<br>
+Die letzten 2 Zeilen des Querys führen dann nur noch die `pfad()` Methode aus.
+
+```sql
+SELECT *
+FROM pfad;
+```
+
 <br>
 Das Ergebnis des ganzen sieht dann am Ende so aus:
 
