@@ -172,6 +172,7 @@ SELECT vorgängerVorlesung.titel AS Voraussetzung, nachfolgerVorlesung.titel AS 
     ON nachfolgerVorlesung.vorlnr = voraussetzen.nachfolger;
 ```
 Dies ist das Ergebnis:
+
 |voraussetzung       |ermöglicht          |pfadlänge|
 |-------------------:|-------------------:|--------:|
 |Grundzuege          |Ethik               |1        |
