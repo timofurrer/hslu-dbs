@@ -27,6 +27,9 @@ Bei der referenziellen Integrität können Datensätze die einen Fremdschlüssel
 **Fortgesetztesändern oder Löschen:** Mit der Angabe `ON UPDATE CASCADE` bzw. `ON DELETE CASCADE` kann die änderung respektive die Löschung eines Referenztupels auf die abhängigen Tupel ausgeweitet werden.
 
 ### Können Sie diese 8 deklariativen Integritätsbedingungen aus Kap. 3.7 zu den 3 strukturellen Integritätsbedingungen aus Kap. 2.3.3 zuordnen?
+| Eindeutigkeitsbedingung | Wertebereichsbedingung | Referenzielle Integritätsbedingung |
+|------------------------:|-----------------------:|-----------------------------------:|
+| Primärschlüsseldefinition<br>Eindeutigkeit | Eindeutigkeit<br>Keine Nullwerte<br>Prüfregel | Fremdschlüsseldefinition<br>Ändern oder Löschen mit Nullsetzen<br>Restriktives ändern oder Löschen<br>Fortgesetztesändern oder Löschen|
 
 ## 2. Referenzielle Integrität in SQL
 Informieren Sie sich auf der PostgreSQL-Webseite, wie sie bei bestehenden Tabellen referenzielle Integritätsbedingungen einfügen können (ALTER TABLE ...)
