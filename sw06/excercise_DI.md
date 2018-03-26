@@ -31,12 +31,12 @@ Bei der referenziellen Integrität können Datensätze die einen Fremdschlüssel
 ## 2. Referenzielle Integrität in SQL
 Informieren Sie sich auf der PostgreSQL-Webseite, wie sie bei bestehenden Tabellen referenzielle Integritätsbedingungen einfügen können (ALTER TABLE ...)
 <br><br>
-http://www.postgresql.org/docs/9.4/static/sql­altertable.html
+https://www.postgresql.org/docs/9.6/static/sql-altertable.html
 <br><br>
-Definieren Sie alle referentiellen Constraints als Primär­ und Fremdschlüssel für die bestehende Uni­Datenbank auf PostgreSQL. Sorgen Sie zudem dafür, dass bei Änderung der Primärschlüssel alle Fremdschlüssel entsprechend aktualisiert werden: Bei Löschen falls möglich auf Null setzen, sonst löschen; bei Veränderung übernehmen.
+Definieren Sie alle referentiellen Constraints als Primär und Fremdschlüssel für die bestehende Uni­Datenbank auf PostgreSQL. Sorgen Sie zudem dafür, dass bei Änderung der Primärschlüssel alle Fremdschlüssel entsprechend aktualisiert werden: Bei Löschen falls möglich auf Null setzen, sonst löschen; bei Veränderung übernehmen.
 
 ## 3. Statische Integrity Constraints in SQL
-Setzen Sie folgende Integritätsbedingungen in SQL auf der bestehenden Uni­Datenbank auf PostgreSQL mit ALTER TABLE um:
+Setzen Sie folgende Integritätsbedingungen in SQL auf der bestehenden Uni-Datenbank auf PostgreSQL mit ALTER TABLE um:
 
  * Professoren können nur die Ränge ‚C3’ und ‚C4’ haben.
  * Professoren haben Einzelbüros.
