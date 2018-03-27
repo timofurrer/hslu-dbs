@@ -13,13 +13,13 @@ Bei einer objektorientierten Datenbank werden ganze Objekte persistiert. Bei ein
 
 ### Was ist ein Surrogat?
 
-Ein Surrogat ist ein definierter, eindeutiger Schlüssel - welcher unabhängig von den Daten eines Tupels gesetzt wird. Üblicherweise eine automatisch inkrementierende Zahl.
+Ein Surrogat ist ein definierter, eindeutiger Identifikations-Schlüssel eines Tupels - welcher unabhängig von den Daten eines Tupels gesetzt wird. Üblicherweise eine automatisch inkrementierende Zahl.
 
 ### Was ist das NF^2 Modell?
 
 NF^2 : Not first normal Form
 
-Das NFNF ist ein Modell, welches auf einer unnormalisierten Datenbank basiert.
+Das NFNF ist ein Modell, welches auf einer unnormalisierten Datenbank basiert. Die Daten sind in diesem Modell (noch) nicht objekt-relational, sondern objekt-orientiert.
 
 ### Was ist der Zusammenahng von NF^2 mit der Objektorientierung?
 
