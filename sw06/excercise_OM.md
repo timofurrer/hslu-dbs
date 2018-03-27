@@ -9,13 +9,25 @@ Lesen Sie im Buch von Meier & Kaufmann (2016) die Kapitel 6.6 und beantworten Si
 
 ### Was ist der Unterschied zwischen objektorientierten und objektrelationalen Datenbanken?
 
+Bei einer objektorientierten Datenbank werden ganze Objekte persistiert. Bei einer objekt-relationalen Datenbanken werden Einträge persistiert, die in sich noch aus mehreren anderen Einträgen/Objekten bestehen können. Zwischen den Objekten bestehen dann Beziehungen (Relationen).
+
 ### Was ist ein Surrogat?
+
+Ein Surrogat ist ein definierter, eindeutiger Schlüssel - welcher unabhängig von den Daten eines Tupels gesetzt wird. Üblicherweise eine automatisch inkrementierende Zahl.
 
 ### Was ist das NF^2 Modell?
 
+NF^2 : Not first normal Form
+
+
+
 ### Was ist der Zusammenahng von NF^2 mit der Objektorientierung?
 
+
+
 ### Was heisst objekt-relationales Mapping?
+
+
 
 ## 3. Fragen
 
