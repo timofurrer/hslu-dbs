@@ -19,15 +19,15 @@ Ein Surrogat ist ein definierter, eindeutiger Schlüssel - welcher unabhängig v
 
 NF^2 : Not first normal Form
 
-
+Das NFNF ist ein Modell, welches auf einer unnormalisierten Datenbank basiert.
 
 ### Was ist der Zusammenahng von NF^2 mit der Objektorientierung?
 
-
+Eine unnormalisierte Datenbank nach dem NF^2 Modell ist objektorientiert, da die Datenbakn nicht normalisiert ist. Somit können in einem Feld eines Tupels auch noch mehrere Werte drin sein - respektive gibt es keine direkten Abhängigkeiten zu anderen Objekten.
 
 ### Was heisst objekt-relationales Mapping?
 
-
+Beim objekt-relationalen Mapping handelt es sich um die Verknüpfung von Objekten einer objekt-orientierten Programmiersprache, mit Objekten in einem relationalen Datenbanksystem.
 
 ## 3. Fragen
 
