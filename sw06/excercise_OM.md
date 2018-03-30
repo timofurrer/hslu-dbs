@@ -81,12 +81,12 @@ Dies wird über das Basic-Tag gesetzt:
 
 ## 4. Programmierung
 
-A. Instanzieren Sie einen Entity-Manager mit Variablenname em 
-B. Geben Sie für alle Professoren den Namen und seine Vorlesungen aus via System.out. Verwenden Sie dazu die generierte NamedQuery Professoren.findAll mit der Methode em.createNamedQuery. 
-C. Selektieren Sie via JPQL die Vorlesungen, welche Sokrates liest, und geben sie Sie via System.out aus. Verwenden sie dazu eine neue JPQL Query mit em.createQuery. 
-D. Setzen sie den Raum von Sokrates auf 1234 und persistieren sie dies auf der Datenbank mit em.merge(). Dazu müssen Sie eine Transaktion mit ta=em.getTransaction() instanzieren, diese vor dem merge beginnen mit ta.begin() und nach dem merge committen mit ta.commit(). 
-E. Fügen Sie einen neuen Professor mit Namen „Precht“ via JPA hinzu mit em.persist()
-F. Fügen Sie eine neue Vorlesung mit Namen "Postmoderne" hinzu, welche Precht liest.
+* A. Instanzieren Sie einen Entity-Manager mit Variablenname em 
+* B. Geben Sie für alle Professoren den Namen und seine Vorlesungen aus via System.out. Verwenden Sie dazu die generierte NamedQuery Professoren.findAll mit der Methode em.createNamedQuery. 
+* C. Selektieren Sie via JPQL die Vorlesungen, welche Sokrates liest, und geben sie Sie via System.out aus. Verwenden sie dazu eine neue JPQL Query mit em.createQuery. 
+* D. Setzen sie den Raum von Sokrates auf 1234 und persistieren sie dies auf der Datenbank mit em.merge(). Dazu müssen Sie eine Transaktion mit ta=em.getTransaction() instanzieren, diese vor dem merge beginnen mit ta.begin() und nach dem merge committen mit ta.commit(). 
+* E. Fügen Sie einen neuen Professor mit Namen „Precht“ via JPA hinzu mit em.persist()
+* F. Fügen Sie eine neue Vorlesung mit Namen "Postmoderne" hinzu, welche Precht liest.
 
 ### Main-Methode
 
