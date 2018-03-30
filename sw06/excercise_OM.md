@@ -33,11 +33,51 @@ Beim objekt-relationalen Mapping handelt es sich um die Verknüpfung von Objekte
 
 ### A. Schauen Sie sich die generierte Datei persistence.xml an. Wie heisst die Persistence Unit, welche bei Ihnen generiert worden ist?
 
+Die Persistence-Unit heisst : ObjektrelationalesMappingPU
+
+```xml
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ObjektrationalesMappingPU" transaction-type="RESOURCE_LOCAL">
+    ..................
+  </persistence-unit>
+</persistence>
+
+```
+
 ### B. Schauen Sie sich die generierte Datei Professoren.java an. Wie bzw. mit welchen Annotationen wurden die Primär- und Fremdschlüssel spezifiziert?
+
+Die Personal-Nummer wurde als nicht optional und als ID spezifiziert.
+
+```java
+    @Id
+    @Basic(optional = false)
+    @Column(name = "PersNr")
+    private Integer persNr;
+```
+
+Der Gelesen-Von Fremdschlüssel wurde als eine OneToMany Beziehung spezifiziert.
+
+```java
+    @OneToMany(mappedBy = "gelesenVon")
+    private Collection<Vorlesungen> vorlesungenCollection;
+```
 
 ### C. Schauen Sie die generierte Datei Studenten.java an. Mit welchen Annotationen wurde die many-to‐many-Relationship umgesetzt? Wie sieht es diesbezüglich bei Vorlesungen.java aus?
 
+```java
+    @ManyToMany(mappedBy = "vorlesungenCollection")
+    private Collection<Studenten> studentenCollection;
+```
+
 ### D. Wie wurde NOT NULL in JPA-Notation umgesetzt?
+
+Dies wird über das Basic-Tag gesetzt:
+
+```java
+    @Basic(optional = false)
+    @Column(name = "VorlNr")
+    private Integer vorlNr;
+```
 
 ## 4. Programmierung
 
