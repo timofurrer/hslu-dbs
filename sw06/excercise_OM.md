@@ -49,24 +49,24 @@ Die Persistence-Unit heisst : ObjektrelationalesMappingPU
 Die Personal-Nummer wurde als nicht optional und als ID spezifiziert.
 
 ```java
-    @Id
-    @Basic(optional = false)
-    @Column(name = "PersNr")
-    private Integer persNr;
+@Id
+@Basic(optional = false)
+@Column(name = "PersNr")
+private Integer persNr;
 ```
 
 Der Gelesen-Von Fremdschlüssel wurde als eine OneToMany Beziehung spezifiziert.
 
 ```java
-    @OneToMany(mappedBy = "gelesenVon")
-    private Collection<Vorlesungen> vorlesungenCollection;
+@OneToMany(mappedBy = "gelesenVon")
+private Collection<Vorlesungen> vorlesungenCollection;
 ```
 
 ### C. Schauen Sie die generierte Datei Studenten.java an. Mit welchen Annotationen wurde die many-to‐many-Relationship umgesetzt? Wie sieht es diesbezüglich bei Vorlesungen.java aus?
 
 ```java
-    @ManyToMany(mappedBy = "vorlesungenCollection")
-    private Collection<Studenten> studentenCollection;
+@ManyToMany(mappedBy = "vorlesungenCollection")
+private Collection<Studenten> studentenCollection;
 ```
 
 ### D. Wie wurde NOT NULL in JPA-Notation umgesetzt?
@@ -74,9 +74,9 @@ Der Gelesen-Von Fremdschlüssel wurde als eine OneToMany Beziehung spezifiziert.
 Dies wird über das Basic-Tag gesetzt:
 
 ```java
-    @Basic(optional = false)
-    @Column(name = "VorlNr")
-    private Integer vorlNr;
+@Basic(optional = false)
+@Column(name = "VorlNr")
+private Integer vorlNr;
 ```
 
 ## 4. Programmierung
@@ -144,21 +144,3 @@ public static void main(String[] args) {
     }
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
