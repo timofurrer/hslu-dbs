@@ -91,7 +91,57 @@ Dies wird über das Basic-Tag gesetzt:
 ### Main-Methode
 
 ```java
-
+public static void main(String[] args) {
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ObjektrationalesMappingPU");
+        EntityManager em = emf.createEntityManager();
+        
+        Query q1 = em.createNamedQuery("Professoren.findAll");
+        List results = q1.getResultList();
+        
+        for (Object temp : results)
+        {
+            Professoren prof = (Professoren)temp;
+            System.out.println(prof.getName());
+            prof.getVorlesungenCollection().forEach((vorl) -> {
+                System.out.println(vorl.getTitel());
+            });       
+            System.out.println("------------------");
+        }
+        
+        q1 = em.createQuery("SELECT v FROM Vorlesungen v");
+        results = q1.getResultList();
+        for (Object temp : results) {
+            Vorlesungen vorl = (Vorlesungen)temp;
+            if (vorl.getGelesenVon().getName().equals("Sokrates")) {
+                System.out.println(vorl.getTitel());
+            }            
+        }
+        
+        Professoren sokrates = new Professoren();
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        q1 = em.createNamedQuery("Professoren.findAll");
+        results = q1.getResultList();
+        for (Object temp : results) {
+            Professoren prof = (Professoren)temp;
+            if (prof.getName().equals("Sokrates")) {
+                sokrates = prof;
+                sokrates.setRaum(1234);
+            }
+        }
+        em.merge(sokrates);
+        transaction.commit();
+        
+        Professoren prof = new Professoren(2200, "Precht");
+        prof.setRang("C4");
+        prof.setRaum(1212);
+        em.persist(prof);
+        
+        Vorlesungen vorl = new Vorlesungen();
+        vorl.setGelesenVon(prof);
+        em.persist(vorl);
+    }
 
 ```
 
