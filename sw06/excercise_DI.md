@@ -131,5 +131,33 @@ Informieren Sie sich auf der Webseite von Postegresql, wie bzw. mit welcher Synt
 Schreiben Sie einen Trigger in PostgreSQL, der prüft, ob Studenten für die Prüfungen alle Vorbedingungen erfüllen, d.h. ob sie alle Vorgänger der zu prüfenden Vorlesung mit genügender Note absolviert haben (<= 3.0).
 
 ```sql
+CREATE OR REPLACE FUNCTION checkVorbedingugen()
+RETURNS TRIGGER AS $$
+DECLARE
+    amount_vorgaenger int;
+    amount_bestanden int;
+BEGIN
+    amount_vorgaenger := (
+        SELECT COUNT(vorgaenger) AS amount_vorgaenger
+        FROM voraussetzen
+        JOIN pruefen ON voraussetzen.vorgaenger = pruefen.vorlnr
+        WHERE matrnr = NEW.matrnr AND nachfolger = NEW.vorlnr
+    );
+    amount_bestanden := (
+        SELECT COUNT(vorgaenger) AS amount_bestanden
+        FROM voraussetzen
+        JOIN pruefen ON voraussetzen.vorgaenger = pruefen.vorlnr
+        WHERE matrnr = NEW.matrnr and nachfolger = NEW.vorlnr and pruefen.note <= 3
+    );
+    IF amount_vorgaenger = amount_bestanden
+    THEN RETURN NEW;
+    ELSE RAISE EXCEPTION
+        'Student % hat Vorlesung % nicht bestanden.', NEW.matrnr, NEW.vorlnr;
+    END IF;
+END; $$ LANGUAGE 'plpgsql';
 
+// create the trigger
+CREATE TRIGGER pruefen_vorbedingugen
+BEFORE INSERT OR UPDATE ON ON pruefen
+FOR EACH ROW EXECUTE PROCEDURE checkVorbedingugen();
 ```
