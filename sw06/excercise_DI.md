@@ -38,13 +38,57 @@ https://www.postgresql.org/docs/9.6/static/sql-altertable.html
 <br><br>
 Definieren Sie alle referentiellen Constraints als Primär und Fremdschlüssel für die bestehende Uni­Datenbank auf PostgreSQL. Sorgen Sie zudem dafür, dass bei Änderung der Primärschlüssel alle Fremdschlüssel entsprechend aktualisiert werden: Bei Löschen falls möglich auf Null setzen, sonst löschen; bei Veränderung übernehmen.
 
+**Beispiel fuer die Assistenten-Tabelle:**
+```sql
+ALTER TABLE assistenten
+ADD PRIMARY KEY (persnr),
+ADD FOREIGN KEY (boss) 
+    REFERENCES professoren (persnr);
+```
+
+**Beispiel fuer die Hoeren-Tabelle:**
+```sql
+ALTER TABLE hoeren
+ADD FOREIGN KEY (matrnr)
+    REFERENCES studenten (matrnr)
+        ON UPDATE CASCADE ON DELETE SET NULL,
+ADD FOREIGN KEY (vorlnr)
+    REFERENCES vorlesugen (vorlnr)
+        ON UPDATE CASCADE ON DELETE SET NULL;
+```
+
 ## 3. Statische Integrity Constraints in SQL
 Setzen Sie folgende Integritätsbedingungen in SQL auf der bestehenden Uni-Datenbank auf PostgreSQL mit ALTER TABLE um:
 
  * Professoren können nur die Ränge ‚C3’ und ‚C4’ haben.
+```sql
+ALTER TABLE professoren
+   ADD CHECK (rang in ('C3', C4'));
+```
+ 
  * Professoren haben Einzelbüros.
+```sql
+ALTER TABLE professoren
+ADD UNIQUE (raum);
+```
+
  * Die Noten dürfen nur zwischen 1.0 und 5.0 sein.
+```sql
+ALTER TABLE pruefen
+ADD CHECK note BETWEEN 1.0 AND 5.0;
+```
+
  * Die Namen der Studenten, Professoren und Assistenten dürfen nicht leer sein.
+```sql
+ALTER TABLE professoren
+ALTER COLUMN name SET NOT NULL;
+
+ALTER TABLE studenten
+ALTER COLUMN name SET NOT NULL;
+
+ALTER TABLE assistenten
+ALTER COLUMN name SET NOT NULL;
+```
 
 ## 4. Trigger (1)
 Professoren sollen immer nur einen Rang höher kommen, aber nie degradiert werden. Der Rang eines Professors ist dabei immer C3 oder C4. Implementieren Sie dazu in der Postgresql den folgenden Trigger:
@@ -69,8 +113,23 @@ FOR EACH ROW EXECUTE PROCEDURE checkDegradierung();
 
 Testen Sie den Trigger: Schreiben Sie ein Update Statement, welches alle Professoren die im Rang C4 sind, auf C3 degradiert, und schauen Sie sich die Response des Datenbankservers an.
 
+```sql
+UPDATE professoren
+SET rang = 'C3'
+WHERE rang = 'C4'
+
+/*
+ERROR: Dgradierender Rang --> C3
+CONTEXT: PL/pgSQL function checkDegradierung() line 6 at RAISE
+*/
+```
+
 ## 5. Trigger (2)
 
-Informieren Sie sich auf der Webseite von Postegresql, wie bzw. mit welcher Syntax Trigger­-Programme implementiert werden können.
+Informieren Sie sich auf der Webseite von Postegresql, wie bzw. mit welcher Syntax Trigger-Programme implementiert werden können.
 <br>
 Schreiben Sie einen Trigger in PostgreSQL, der prüft, ob Studenten für die Prüfungen alle Vorbedingungen erfüllen, d.h. ob sie alle Vorgänger der zu prüfenden Vorlesung mit genügender Note absolviert haben (<= 3.0).
+
+```sql
+
+```
