@@ -25,7 +25,15 @@ Gruppe 04 - Timo Furrer, David Staub, Dominik Waldispühl
 
 ### Was sind Container Services?
 
+Container as a Service (CaaS) ist ein Cloud-Dienst, mit dem Softwareentwickler Container starten, stoppen, organisieren, scalen und managen können. Wie bei den meisten Cloud-Diensten zahlen Benutzer nur für die von ihnen verwendeten CaaS-Ressourcen wie Recheninstanzen, Lastausgleichs- und Planungsfunktionen. Typische Anbiter sind Google mit Google Container Engine, Microsoft mit Azure Container Service und Amazon mit Amazon ECS Container Agent.
+
 ### Was ist der Unterschied zwischen File und Block Storage?
+
+#### File Storage
+Diese Speichertechnologie wird am häufigsten für Speichersysteme verwendet, die in Festplatten, NAS-Systemen usw. enthalten sind. In dieser Speicherart wird die Festplatte mit einem Protokoll wie NFS oder SMB / CIFS konfiguriert, und die Dateien werden hirarchisch gespeichert.
+
+#### Block Storage
+Diese Speichertechnologie werden "rohe" Speicher-Volumen angeboten. Jeder Block kann einzeln verwalter und als einzelen Festplatte gemanaged werden. Die Blocks werden von einem Server verwaltet.
 
 ### Gibt es Ansätze AI-Lösungen als Cloud Service anzubieten?
 
