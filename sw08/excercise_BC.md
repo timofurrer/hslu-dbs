@@ -17,9 +17,9 @@ Dies kommt stark auf die Nutzeranzahl darauf an, welche prinzipiell schon einmal
 
 ### Welche Blockchain-Type gibt es?
 
-**1. Typ** : Permissionless Blockchain: Jeder darf als Reader oder Writer auf die Blockchain zugreifen, es gibt keine zentrale Einheit welche gewisse Benutzer vom System blocken könnten. Bitcon und Ehtereum sind Beispiele für permissionless Blockchains.
+**1. Typ Permissionless Blockchain**: Jeder darf als Reader oder Writer auf die Blockchain zugreifen, es gibt keine zentrale Einheit welche gewisse Benutzer vom System blocken könnten. Bitcon und Ehtereum sind Beispiele für permissionless Blockchains.
 
-**2. Typ** : Permissioned Blockchain: Nur gewisse Benutzer dürfen als Reader oder Writer auf die Blockchain zugreifen, es gibt eine zentrale Einheit welche gewisse Benutzer vom System blocken oder ausschliessen könnten. Hyperledger Fabric and R3 Corda sind Beispiele für permissioned Blockchains.
+**2. Typ : Permissioned Blockchain**: Nur gewisse Benutzer dürfen als Reader oder Writer auf die Blockchain zugreifen, es gibt eine zentrale Einheit welche gewisse Benutzer vom System blocken oder ausschliessen könnten. Hyperledger Fabric and R3 Corda sind Beispiele für permissioned Blockchains.
 
 ### Für welche Anwendungsfälle ist die Blockchain primär geeignet?
 
