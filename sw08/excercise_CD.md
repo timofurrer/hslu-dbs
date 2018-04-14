@@ -38,3 +38,5 @@ Diese Speichertechnologie werden "rohe" Speicher-Volumen angeboten. Jeder Block 
 ### Gibt es Ansätze AI-Lösungen als Cloud Service anzubieten?
 
 ## 2. Hands-on
+
+Siehe [Ionic CRUD ShoppingList with Firebase](https://github.com/timofurrer/hslu-dbs/tree/master/sw08/crud-app/IonicShoppingList)
