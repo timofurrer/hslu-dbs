@@ -33,7 +33,16 @@ Ein von der Polizei/Gericht geführtes Strafregister, bei dem alle Zwischenfäll
 
 ### Welche Unterschiede und Gemeinsamkeiten bestehen zwischen einer relationalen Datenbank und einer Blockchain-basierten Datenbank wie Bitcoin? Erstellen Sie dazu ein Vergleichsraster
 
-
+|                    |Relationale DB      |Blockchain          |
+|:-------------------|:-------------------|:-------------------|
+| Performance | Hoch | Tief |
+| Skalierbarkeit | Mittel | Hoch |
+| Datenkonsistenz | Möglich, aber nicht immer gegeben | Immer gegeben |
+| Form | Im Normalfall zentral | Dezentral |
+| Create | X | X |
+| Read | X | X |
+| Update | X |  |
+| Delete | X |  |
 
 ### Wie würden Sie eine Blockchain Datenbank in das Universum von realtionalen und NoSQLDatenbanken einordnen? Erstellen Sie dazu eine kleine Grafik und beschrieben Sie die Differenzierung.
 
