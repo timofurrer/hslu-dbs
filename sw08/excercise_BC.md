@@ -54,3 +54,6 @@ Nein, man kann zwar CREATE und READ auf der Blockchain ausführen, ein UPDATE od
 
 ### Fassen Sie auf einer ¼ Seite die Einsatzmöglichkeiten und Fuktionen von BigChainDB (https://www.bigchaindb.com/) zusammen.
 
+BigChainDB ist eine verteilte Big-Data Datenbank, bei der Blockchain-Charakteristiken hinzugefügt wurden - unter anderem die dezentralisierte Kontrolle, die immutabilität und die Übertragung von Digital-Assets. Es ist ein Open-Source Projekt, gehosted auf Github(https://github.com/bigchaindb).
+
+Die Einsatzmöglichkeiten sind ausschliesslich für nicht verändernde Daten ausgelegt. Ein starkes Augenmerk wurde jedoch auf die Performance und die Latenz gesetzt, wodurch Sie sich auch optimal für Big-Data Datenbanken eignet. Wie bei einer Blockchain, kann auch bei BigChainDB entschieden werden, ob es komplett öffentlich (Permissionless Blockchain) oder privat (Permissioned Blockchain) gehalten wird. Zusätzlich können die Zugriffsrechte sogar auf Transaktions-Ebene gesetzt werden.
