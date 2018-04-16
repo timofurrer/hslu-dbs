@@ -48,6 +48,7 @@ Ein von der Polizei/Gericht geführtes Strafregister, bei dem alle Zwischenfäll
 
 Links Blockchain | rechts "normale" Datenbanken
 ![Imgur](https://i.imgur.com/OQQrHhW.jpg)
+`<Gitprint.com error, see image here : https://i.imgur.com/OQQrHhW.jpg>`
 
 Blockchains sind immer dezentral und haben ganz viele Clients, welche die Blockchain hosten und "kontrollieren". Bei den "normalen" Datenbanken sind es normalerweise ein paar weniger Server, auf welche zugegriffen wird. Dann gibt es meistens eine zentrale Instanz, welche der Master ist.
 
