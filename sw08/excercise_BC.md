@@ -46,7 +46,10 @@ Ein von der Polizei/Gericht geführtes Strafregister, bei dem alle Zwischenfäll
 
 ### Wie würden Sie eine Blockchain Datenbank in das Universum von realtionalen und NoSQLDatenbanken einordnen? Erstellen Sie dazu eine kleine Grafik und beschrieben Sie die Differenzierung.
 
+Links Blockchain | rechts "normale" Datenbanken
+![Imgur](https://i.imgur.com/OQQrHhW.jpg)
 
+Blockchains sind immer dezentral und haben ganz viele Clients, welche die Blockchain hosten und "kontrollieren". Bei den "normalen" Datenbanken sind es normalerweise ein paar weniger Server, auf welche zugegriffen wird. Dann gibt es meistens eine zentrale Instanz, welche der Master ist.
 
 ### Sind Blockchain Datenbanken kompatibel mit CRUD?
 
