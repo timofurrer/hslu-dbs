@@ -36,13 +36,67 @@ Da der Eingabetext potenziell immer ausführbaren SQL-Code enthalten könnte, so
 
 ### Erstellen Sie pro Professor ein Benutzer mit gleichem Benutzernamen. Wählen Sie als Passwort ‚@‘ plus den Namen.
 
-
+```sql
+CREATE USER 'Sokrates' IDENTIFIED BY '@Sokrates';
+CREATE USER 'Russel' IDENTIFIED BY '@Russel';
+CREATE USER 'Kopernikus' IDENTIFIED BY '@Kopernikus';
+CREATE USER 'Popper' IDENTIFIED BY '@Augustinus';
+CREATE USER 'Augustinus' IDENTIFIED BY '@Augustinus';
+CREATE USER 'Curie' IDENTIFIED BY '@Curie';
+CREATE USER 'Kant' IDENTIFIED BY '@Kant';
+```
 
 ### Erstellen Sie zwei (änderbare) Sichten (updateable views), zusammen mit den entsprechenden Rechtevergaben, welche diese Anforderungen erfüllen:
 
+```sql
+CREATE VIEW view_c4 AS
+  SELECT vorlesungen.* FROM vorlesungen INNER JOIN
+    professoren ON (vorlesungen.gelesenVon = professoren.PersNr)
+  WHERE professoren.Rang = 'C4';
+  
+CREATE VIEW view_c3 AS
+  SELECT vorlesungen.* FROM vorlesungen INNER JOIN
+    professoren ON (vorlesungen.gelesenVon = professoren.PersNr)
+  WHERE professoren.Rang = 'C3';
+```
+
 * Alle Professoren mit Rang C4 sollen das Recht SELECT, INSERT, UPDATE und DELETE auf die View view_c4 kriegen.
+
+```sql
+SELECT Name 
+FROM professoren
+WHERE Rang = 'C4';
+
+/* Sokrates, Russel, Curie, Kant */
+
+GRANT select, insert, update, delete ON view_c4 TO Sokrates;
+GRANT select, insert, update, delete ON view_c4 TO Russel;
+GRANT select, insert, update, delete ON view_c4 TO Curie;
+GRANT select, insert, update, delete ON view_c4 TO Kant;
+```
+
 * Zudem sollen Professoren mit Rang C4 das Recht SELECT auf die View view_c3 erhalten.
+
+```sql
+GRANT select ON view_c3 TO Sokrates;
+GRANT select ON view_c3 TO Russel;
+GRANT select ON view_c3 TO Curie;
+GRANT select ON view_c3 TO Kant;
+```
+
 * Alle Professoren mit Rang C3 sollen das Recht SELECT, INSERT, UPDATE und DELETE auf die View view_c3 kriegen.
+
+```sql
+SELECT Name 
+FROM professoren
+WHERE Rang = 'C3';
+
+/* Kopernikus, Popper, Augustinus */
+
+GRANT select, insert, update, delete ON view_c3 TO Kopernikus;
+GRANT select, insert, update, delete ON view_c3 TO Popper;
+GRANT select, insert, update, delete ON view_c3 TO Augustinus;
+```
 
 ## 3. SQL Injection
 
