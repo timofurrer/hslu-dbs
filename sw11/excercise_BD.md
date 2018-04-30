@@ -8,11 +8,19 @@ Gruppe 04 - Timo Furrer, David Staub, Dominik Waldispühl
 
 ### Wie hat sich die potenzielle Informationsmenge weltweit entwickelt?
 
-ToDo
+Exponentiell: <br>
+1986 - 2.6 EB <br>
+1993 - 15.8 EB <br>
+2000 - 54.5 EB <br>
+2007 - 295 EB <br>
+ <br>
+ EB -> Exabyte  =  1  x  10^18  Bytes
+
 
 ### Wieviel Speicherkapazität wurde fürs Jahr 2007 geschätzt?
 
-ToDo
+ca. 264 EB   (nicht  normalisiert  für  die  Kompression)  
+ca. 276 (optimal  komprimierte)
 
 ### Wenn dieser Trend so weitergeht, wo stehen wir im Jahr 2017? Und wieviele Daten, weltweit und pro Kopf, werden wir im Jahr 2030 haben?
 
