@@ -34,11 +34,14 @@ Schemafreiheit bedeutet, dass eine Datenbank kein Schema enthält, welches die D
 
 ### In welchen Szenarien setzt man optimal auf welche der beiden Varianten?
 
-ToDo
+Wenn die Datenmengen nicht zu gross sind und insgesammt sehr strukturiert (einfach in ein Schema zu packen), ist eine SQL Datenbank zu bevorzugen. Bei grossen und eher unstrukturierten Datenmengen sollte auf NoSQL gesetzt werden. Ebenfalls kommt es noch auf die Anforderungen an die Integrität der Daten an.
 
 ### Welche NoSQL-Systeme gibt es?
 
-ToDo
+* Schlüssel-Wert-Datenbanken
+* Spaltenfamilien-Datenbanken
+* Dokument-Datenbanken
+* Graph-Datenbanken
 
 ### Wie wird Map‐Reduce mit CouchDB umgesetzt? Wie wird dabei auf heterogene Schemata (unterschiedliche Dokumentstrukturen) eingegangen? Wie kann dies auf mehrere Rechner verteilt werden?
 
