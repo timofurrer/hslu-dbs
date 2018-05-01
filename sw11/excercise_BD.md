@@ -50,21 +50,33 @@ Die Kassonbons werden an POS (Point of Sale) generiert und via Bulk Loads in ein
 
 #### Source Data: Welches sind die Quelldaten und wo sind sie gespeichert?
 
-ToDo
+Es handelt sich hierbei um folgende Daten eines Kassenbons:
+
+* Kunde Id
+* Product Family bestehend aus TRX und Wert.
 
 #### Integrated Data Base: Wie und wo werden die Daten in einer Datenbasis integriert?
 
-ToDo
+Sie werden in HBase / Hadoop gespeichert.
 
 ### Analysis
 
-#### Analytic Processes: Welche analytichen Geschäftsvorgänge verwenden diese Daten (oder könnten dieses Daten verwenden)?
+#### Analytic Processes: Welche analytischen Geschäftsvorgänge verwenden diese Daten (oder könnten dieses Daten verwenden)?
 
-ToDo
+* Vorhersagen was ein Kunde kauft
+* Auswertung was, wie oft gekauft wurde
+* Auswerten welche Kunden an welchen Produkten interessiert sind
+* Auswerten welche Produkte zusammen gekauft werden
+
+Mit diesen Auswertungen kann man Aktionen planen und die Produkte entsprechend im Verkaufsstandort praesentieren bzw. im allgemeinen gezielteres Marketing betreiben
 
 #### Analytic Software: Mit welcher analytischen Software und mit welchen Algorithmen werden die Daten analysiert (oder könnten damit analysiert werden?)
 
-ToDo
+Mit den bestehenden Frontend-Services.
+In der Fallstudie wird nichts spezifisches erwaehnt. Es gibt aber eine Menge Machine Learning Algorithmen die man brauchen koennte:
+
+* Basket Analysis mit apriori
+* Logistic Classification -> Was ein Kunde kaufen wird.
 
 ### Interaction
 
