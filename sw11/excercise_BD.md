@@ -82,14 +82,16 @@ In der Fallstudie wird nichts spezifisches erwaehnt. Es gibt aber eine Menge Mac
 
 #### Applying Processes: Wie interagieren die Daten mit anwendenen Prozessen?
 
-ToDo
+Es geht vorallem darum Lizenz- und Lohnkoesten zu sparen.
+Sonst kann nichts aus der Fallstudie gelesen werden.
 
 #### User & Machine Interfaces: Mit welche Mensch / Maschinen Schnittstellen bestehen für die Interation mit Daten
 
-ToDo
+Es gibt eine Mobile und Web Applikation, die die Daten in HBase ueber eine REST-API abfragen und verarbeiten koennen.
 
 ### Effectuation
 
 #### Value Creation: Wie entsteht durch Big Data Management Wert für das Unternehmen?
 
-ToDo
+Es geht vorallem darum Lizenz- und Lohnkoesten zu sparen.
+Zudem koennen die Daten gespeichert werden, was von gesetzteswegen erforderlich ist.
