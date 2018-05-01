@@ -14,23 +14,23 @@ Gruppe 04 - Timo Furrer, David Staub, Dominik Waldispühl
 
 ### Aus welchen Gründen entstand die NoSQL-Bewegung?
 
-ToDo
+Durch den Wunsch auch grössere Datenmengen verarbeiten zu können (ausgelöst durch das Web 2.0 ab der Jahrtausendwende). SQL Datenbanken sind auf Integrität ausgelegt, bei sehr grossen Datenmengen ist dies aber nicht immer zwingend, dadurch entstanden NoSQL Datenbanken.
 
 ### Was ist der Unterschied zwischen SQL und NoSQL?
 
-ToDo
+NoSQL Datenbanken bieten (meist) keine SQL Schnittstelle und bei NoSQL ist die Datenintegrität nicht immer gegeben.
 
 ### Welche Vorteile hat SQL gegenüber NoSQL?
 
-ToDo
+SQL Datenbanken haben den Vorteil dass sie die sehr mächtige Abfragesprache SQL anbieten. Mit dieser Sprache kann man sehr simpel beschreiben welches Resultat man gerne hättet, ohne zu definieren wie man zum Resultat gelangt. Somit ist die Sprache für Entwickler sowie für Leute mit wenig Kentnissen schnell verständlich. Zusätzlich ist bei den SQL Datenbanken die Konsistenz und Integrität der Daten immer gewährt.
 
 ### Welche Vorteile hat NoSQL gegenüber SQL?
 
-ToDo
+NoSQL Datenbanken sind sehr gut Skalierbar und aus diesem Grund auch sehr Performant bei sehr grossen Datenmengen.
 
 ### Was heisst Schemafreiheit?
 
-ToDo
+Schemafreiheit bedeutet, dass eine Datenbank kein Schema enthält, welches die Daten in Tabellen "gruppiert/zuweist". 
 
 ### In welchen Szenarien setzt man optimal auf welche der beiden Varianten?
 
