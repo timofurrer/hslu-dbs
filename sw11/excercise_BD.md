@@ -101,4 +101,5 @@ Es gibt eine Mobile und Web Applikation, die die Daten in HBase ueber eine REST-
 #### Value Creation: Wie entsteht durch Big Data Management Wert für das Unternehmen?
 
 Es geht vorallem darum Lizenz- und Lohnkoesten zu sparen.
+Auch die bestehenden Frontends koennen weiterhin verwendet werden.
 Zudem koennen die Daten gespeichert werden, was von gesetzteswegen erforderlich ist.
