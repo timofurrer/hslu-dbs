@@ -19,16 +19,23 @@ Exponentiell: <br>
 
 ### Wieviel Speicherkapazität wurde fürs Jahr 2007 geschätzt?
 
-ca. 264 EB   (nicht  normalisiert  für  die  Kompression)  
-ca. 276 (optimal  komprimierte)
+ca. 264 EB (nicht  normalisiert  für  die  Kompression)  
+ca. 276 EB (optimal  komprimierte)
 
 ### Wenn dieser Trend so weitergeht, wo stehen wir im Jahr 2017? Und wieviele Daten, weltweit und pro Kopf, werden wir im Jahr 2030 haben?
 
-ToDo
+Die CARG (Compound Annual Growth Rate) wurde auf 23% berechnet.
+
+276 * 1.23^10 = 2'187 EB fürs Jahr 2017
+
+276 * 1.23^23 = 32'264 EB fürs Jahr 2030 -> verteilt auf 8.5 Mia Menschen [1] -> 3.8 TB pro Kopf
+
+[1] Quelle:https://www.un.org/sustainabledevelopment/blog/2015/07/un-projects-world-population-to-reach-8-5-billion-by-2030-driven-by-growth-in-developing-countries/
+
 
 ### Was bedeutet dies für unsere Gesellschaft, für Organisationen und für Individuen?
 
-ToDo
+Da es immer mehr Daten geben wird, wird es immer wichtiger zu unterscheiden zwischen nützlichen Informationen und nicht relevanten Daten. Dass  Datenverarbeitung effizient und zielführend gemacht wird wird immer essenzieller werden. Da die Datenverarbeitung selbst auch wieder neue Daten generiert, wird wahrscheinlich in Zukunft mehr Wert darauf gelegt Datenströme möglichst früh zu filtern. 
 
 ## 2. Fallstudie
 
