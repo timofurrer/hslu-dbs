@@ -45,7 +45,7 @@ Wenn die Datenmengen nicht zu gross sind und insgesammt sehr strukturiert (einfa
 
 ### Wie wird Map‐Reduce mit CouchDB umgesetzt? Wie wird dabei auf heterogene Schemata (unterschiedliche Dokumentstrukturen) eingegangen? Wie kann dies auf mehrere Rechner verteilt werden?
 
-ToDo
+In der Map-Phase können durch `emit()` bestimmte Merkmale auf bestimmte Kennzahlen abgebildet werden. In der Reduce-Phase kann durch ein return <aggregat> ein Returnwert bestimmt werden. Die beiden Phasen kann man separat auf mehrere Rechner verteilen.
 
 ### Welche Mehrwert bieten Dokumentdatenbanken gegenüber von Spalten-Wert-Datenbanken? 
 
