@@ -34,7 +34,7 @@ Schemafreiheit bedeutet, dass eine Datenbank kein Schema enthält, welches die D
 
 ### In welchen Szenarien setzt man optimal auf welche der beiden Varianten?
 
-Wenn die Datenmengen nicht zu gross sind und insgesammt sehr strukturiert (einfach in ein Schema zu packen), ist eine SQL Datenbank zu bevorzugen. Bei grossen und eher unstrukturierten Datenmengen sollte auf NoSQL gesetzt werden. Ebenfalls kommt es noch auf die Anforderungen an die Integrität der Daten an.
+Wenn die Datenmengen nicht zu gross sind und insgesammt sehr strukturiert (einfach in ein Schema zu packen), ist eine SQL Datenbank zu bevorzugen. Bei grossen und eher unstrukturierten Datenmengen sollte auf NoSQL gesetzt werden. Ebenfalls kommt es noch auf die Anforderungen an die Integrität der Daten an -> Hohe Integrität -> SQL
 
 ### Welche NoSQL-Systeme gibt es?
 
@@ -49,16 +49,16 @@ ToDo
 
 ### Welche Mehrwert bieten Dokumentdatenbanken gegenüber von Spalten-Wert-Datenbanken? 
 
-ToDo
+Die Datensätze haben eine detailiertere Struktur und sind somit an einem Ort gespeichert, was optimal für die Abfrage-Performance von horizontal skalierten Systemen ist.
 
-### Welchem Mehrwert bieten Spaltenfamilien-­‐Datenbanken gegenüber Spalten-Wert-Datenbanken? 
+### Welchem Mehrwert bieten Spaltenfamilien-Datenbanken gegenüber Spalten-Wert-Datenbanken? 
 
-ToDo
+Physisch können Spaltenfamilien gruppiert werden, was ebenfalls wieder der Performance zu gute kommt.
 
 ### Welchem Mehrwert bieten Dokumentdatenbanken gegenüber von Spaltenfamilien-Datenbanken? 
 
-ToDo
+Die Daten werden Schemafrei gespeichert, somit ist es sehr flexibel wenn viele Datensätze mit unterschiedlichen Attributen existieren. Der eine Datensatz kann eine E-Mail enthalten, der andere z.B keine E-Mail dafür 3 verschiedene Rufnummern.
 
 ### Welchen Mehrwert bieten Spaltenfamilien-Datenbanken gegenüber von Dokument-Datenbanken?
 
-ToDo
+Spaltenfamilien-Datenbanken können die Einzelwerte verteilt abspeichern mit einer sehr schnellen Zugriffszeit. Deshalb sind sie geeignet für grosse Datenmengen mit Lesezugriffoptimierung.
