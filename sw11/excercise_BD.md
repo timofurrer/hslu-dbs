@@ -40,11 +40,11 @@ ToDo
 
 #### Real world signals: Um welche Signale der realen Welt geht es in der Fallstudie?
 
-ToDo
+Es handelt sich um Kassendaten, die in Form von Kassenbons gesetzteswegen gespeichert werden muessen.
 
 #### Sensors and Input Devices: Wie werden diese Signale zu Daten (Datafizierung)?
 
-ToDo
+Die Kassonbons werden an POS (Point of Sale) generiert und via Bulk Loads in ein RDBMS gespeichert.
 
 ### Integration
 
